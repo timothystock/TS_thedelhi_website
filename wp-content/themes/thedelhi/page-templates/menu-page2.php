@@ -8,7 +8,7 @@ get_header(); ?>
 	<div class="main-grid grid-container">
       
         <div class="row grid-x grid-padding-x" data-sticky-container>
-            <div class="columns cell medium-6">
+            <div class="columns cell medium-7">
                 <div class="menu-page">
                    
                       <div class="" id="appetisers">
@@ -100,9 +100,9 @@ get_header(); ?>
                    
                 </div>
             </div>
-            <div class="cell medium-6"  data-sticky-container>
+            <div class="cell medium-5"  data-sticky-container>
             
-                <div id="Basket" class="sticky"  data-sticky data-margin-top="0"><?php echo do_shortcode( '[woocommerce_cart]' ); ?></div>
+                <div id="Basket" class="sticky"  data-sticky data-margin-top="2"><?php echo do_shortcode( '[woocommerce_cart]' ); ?></div>
                   
             </div>
         </div>

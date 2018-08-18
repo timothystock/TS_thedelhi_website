@@ -82,3 +82,8 @@
 @import "templates/front";
 @import "templates/menu";
 @import "templates/kitchen-sink";
+
+//WooCommerce
+@import "woo-overrides/woocommerce.scss";
+@import "woo-overrides/woocommerce-smallscreen.scss";
+@import "woo-overrides/woocommerce-layout.scss";

@@ -30,3 +30,142 @@
         }
     }
 }
+
+.product-remove.button.tiny.alert {}
+
+.product-remove {
+//    @include button;
+//    padding: .5em;
+    font-size: 0.75rem;
+    font-weight: 800;
+//    background-color: $alert-color;
+    color: $alert-color;
+//    @include tiny;
+//    @include alert;
+}
+
+.menu-page {
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+    .figure {text-align: center}
+    .figure > h3 {
+       
+        font-family: 'oswald', 'ostrich', 'DIN Condensed', serif; 
+        font-size: 1.15rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 6px;
+    }
+    .woocommerce {
+       ul.products li.product {
+//           overflow: hidden;
+           h3.product-title {
+                font-weight:700;
+               
+           }
+           a {
+               -webkit-font-smoothing: subpixel-antialiased;
+               -webkit-font-smoothing: antialiased;
+               text-shadow: rgba(0,0,0,.01) 0 0 1px;
+//               backface-visibility: hidden;    
+//               -webkit-filter: blur(-0);
+               padding-left:1.75rem;
+               padding-right: 1.75rem;
+               padding-bottom: .1rem;
+               border: 5px solid white;
+               &:hover {
+//                   zoom: 115%;
+//                   transition: zoom 0.2s;
+//                   padding-left: .75rem;
+//                   padding-right: .75rem;
+//                   transform: scale3d(1.125,1.125, 1);
+//                   transform: scale(1.125) perspective(1px) translateZ(0);
+//                   border: 6px solid lighten($yellow,25%);
+//                   transition: transform 0.2s;
+//                   transform-origin: center;
+                   background-color: lighten($yellow,25%);
+                   background: url(../images/shape2-yellow.svg);
+                   background-size: 100% 100%; 
+                   background-repeat:no-repeat;
+               }
+               p {
+                   font-size:.875rem;
+                   line-height: 1.25;
+                   color:$body-font-color;
+                   margin-bottom: .6rem;
+               }
+           }
+       }
+    }
+    & > div:nth-child(4n+1) {
+       .woocommerce ul.products li.product a:hover {
+            background-color: lighten($green,25%);
+            background: url(../images/shape2-green.svg);
+            background-size: 100% 100%; 
+            background-repeat:no-repeat;
+        }
+    }
+    & > div:nth-child(4n+2) {
+        .woocommerce ul.products li.product a:hover {
+            background-color: lighten($pink,25%);
+            background: url(../images/shape2-pink.svg);
+            background-size: 100% 100%; 
+            background-repeat:no-repeat;
+        }
+    }
+    & > div:nth-child(4n+3) {
+        .woocommerce ul.products li.product a:hover {
+            background-color: lighten($coral,25%);
+            background: url(../images/shape2-coral.svg);
+            background-size: 100% 100%; 
+            background-repeat:no-repeat;
+        }
+    }
+    
+}
+
+#Basket {
+    padding: 1em;
+//    position: relative;
+    &:before {
+        content:'';
+        display: block;
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:2em;
+        right:2em;
+        border-radius: 1.75em;
+        z-index:0;
+        background-color: lighten($coral,25%);
+    }
+    &:after {
+        content:'';
+        display: block;
+        position: absolute;
+        left:0;
+        right:0;
+        top:2em;
+        bottom:2em;
+        border-radius: 1.75em;
+        z-index:1;
+        background-color: lighten($coral,25%);
+    }
+    & > div.woocommerce {
+        position:relative;
+        z-index:2;
+        background-color: lighten($coral,25%);
+        padding:1.25em;
+    }
+    .grid-padding-x .grid-padding-x {
+        margin-right: -0.425rem;
+        margin-left: -0.425rem;
+    }
+    .grid-padding-x > .cell {
+        padding-right: 0.425rem;
+        padding-left: 0.425rem;
+    }
+}

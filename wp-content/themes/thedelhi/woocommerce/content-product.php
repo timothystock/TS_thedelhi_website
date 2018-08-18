@@ -38,8 +38,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
             $product_description = $product->get_description();
     
     ?>
-    <a href="#" data-open="reveal_<?php echo $product_id; ?>" style="border: 1px solid black;display:block">
-        <h3 class="product-title" style="display:block; font-weight:bold; font-family: 'trocchi';"><?php echo $product_title; ?>
+    <a href="#" data-open="reveal_<?php echo $product_id; ?>" style="display:block">
+        <h3 class="product-title" style="display:block;"><?php echo $product_title; ?>
              <?php
                 $producttags = get_the_terms( $product->get_id(), product_tag );
                 if ($producttags) {

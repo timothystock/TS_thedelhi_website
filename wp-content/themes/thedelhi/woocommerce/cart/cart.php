@@ -27,11 +27,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
-	<div class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
-		
+	<div class="shop_table shop_table_responsive cart woocommerce-cart-form__contents grid-x grid-padding-x" >
+		<h5 class="cell text-center">Your order:</h5>
 		<div class="cell">
 			<?php do_action( 'woocommerce_before_cart_contents' ); ?>
-<h2>Your order:</h2>
+
 			<?php
 			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 				$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
@@ -40,7 +40,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 					$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
 					?>
-					<div class="grid-x woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+					<div class="grid-x grid-padding-x woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
 				
                         <div class="cell shrink product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>"><?php
@@ -62,16 +62,16 @@ do_action( 'woocommerce_before_cart' ); ?>
                         
 						<div class="cell auto product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
                             <?php
-                            echo '<p><strong>';
+                            echo '<h6><strong>';
 							echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;';
                     echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-									'</br><a href="%s" class="product-remove" style="color: red;" aria-label="%s" data-product_id="%s" data-product_sku="%s">Remove</a>',
+									'</strong></h6><p><a href="%s" class="product-remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">Remove</a></p>',
 									esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 									__( 'Remove this item', 'woocommerce' ),
 									esc_attr( $product_id ),
 									esc_attr( $_product->get_sku() )
 								), $cart_item_key );
-                            echo '</strong></p>';
+                            echo '</p>';
 					
 
 						// Meta data.
@@ -111,7 +111,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 			<?php do_action( 'woocommerce_cart_contents' ); ?>
 
-			<div class="grid-container">
+<!--			<div class="grid-container">-->
 				<div class="actions grid-x">
                     <div class="cell text-right"><button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button></div>
 					<?php if ( wc_coupons_enabled() ) { ?>
@@ -129,7 +129,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 					<?php wp_nonce_field( 'woocommerce-cart' ); ?>
 				</div>
-			</div>
+<!--			</div>-->
 
 			<?php do_action( 'woocommerce_after_cart_contents' ); ?>
 		</div>
