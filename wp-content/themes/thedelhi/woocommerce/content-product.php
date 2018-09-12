@@ -63,7 +63,11 @@ if ( empty( $product ) || ! $product->is_visible() ) {
                     <?php echo $label; ?>Add to order
                 </button>
             -->
-    <div id="reveal_<?php echo $product_id; ?>" class="reveal" data-reveal>
+    <div id="reveal_<?php echo $product_id; ?>" class="reveal addtocart" data-reveal>
+        <div class="addtocart-content">
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
                <?php do_action( 'woocommerce_widget_product_item_start', $args ); ?>
 
                     <h3 class="product-title">
@@ -135,4 +139,5 @@ if ( empty( $product ) || ! $product->is_visible() ) {
             do_action( 'woocommerce_single_product_summary' ); 
                 ?>
         </div>
+    </div>
 </li>
