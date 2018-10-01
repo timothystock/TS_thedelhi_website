@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Menu page v2
+Template Name: Menu page v3
 */
 get_header(); ?>
 

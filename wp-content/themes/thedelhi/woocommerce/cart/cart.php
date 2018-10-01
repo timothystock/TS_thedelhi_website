@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.3.0
+ * @version 3.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -65,13 +65,12 @@ do_action( 'woocommerce_before_cart' ); ?>
                             echo '<h6><strong>';
 							echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;';
                     echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-									'</strong></h6><p><a href="%s" class="product-remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">Remove</a></p>',
+									'</strong></h6><p style="line-height:1"><a href="%s" class="product-remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">Remove</a></p>',
 									esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 									__( 'Remove this item', 'woocommerce' ),
 									esc_attr( $product_id ),
 									esc_attr( $_product->get_sku() )
-								), $cart_item_key );
-                            echo '</p>';
+								), $cart_item_key );  
 					
 
 						// Meta data.
@@ -84,9 +83,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 
 <!--
+
+            
 						<span class="product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
 							<?php
-								echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
+								echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 							?>
 						</span>
 -->
@@ -98,7 +99,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 						<div class="cell shrink product-subtotal" data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>">
 							<?php
-								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
+								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok. 
 							?>
 						</div>
 			 	       			 	       	       
@@ -127,7 +128,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 
-					<?php wp_nonce_field( 'woocommerce-cart' ); ?>
+					<?php wp_nonce_field( 'woocommerce-cart','woocommerce-cart-nonce' ); ?>
 				</div>
 <!--			</div>-->
 

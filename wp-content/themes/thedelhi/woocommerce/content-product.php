@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.0.0
+ * @version 3.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -63,8 +63,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
                     <?php echo $label; ?>Add to order
                 </button>
             -->
-    <div id="reveal_<?php echo $product_id; ?>" class="reveal addtocart" data-reveal>
-        <div class="addtocart-content">
+    <div id="reveal_<?php echo $product_id; ?>" class="reveal addtocart grid-y" data-reveal>
+        <div class="addtocart-content cell">
             <button class="close-button" data-close aria-label="Close modal" type="button">
               <span aria-hidden="true">&times;</span>
             </button>
