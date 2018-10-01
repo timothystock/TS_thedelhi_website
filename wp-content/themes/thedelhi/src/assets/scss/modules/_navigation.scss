@@ -17,6 +17,30 @@
 // Mobile menu
 .mobile-menu {
   display: none; // prevents repaint caused by JS hiding menu onload
+    padding-bottom: 10vw;
+    #menu-main-menu {
+        li {
+            text-align: center;
+            a{
+                padding: .5rem;
+                color: $black;
+            }
+            &:not(:last-child) {
+                &:after {
+                    content: '';
+                    display: flex;
+                    margin:0 auto;                    
+                    width:20px;
+                    border-bottom:1px solid $black;
+                    height: 0px;
+                }
+            }
+        }
+    }
+}
+#mobile-menu-toggle {
+    margin: 0 auto;
+    display: block;
 }
 
 .off-canvas {

@@ -19,10 +19,10 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-	
-    <nav class="mobile-off-canvas-menu off-canvas position-left reveal-for-large" id="<?php foundationpress_mobile_menu_id(); ?>" data-off-canvas data-auto-focus="false" role="navigation">
+	<div class="off-canvas-wrapper">
+    <nav class="mobile-off-canvas-menu off-canvas position-left reveal-for-medium" data-auto-focus="false" role="navigation">
         <div class="off-canvas-content">
-            <div class="reveal-for-large">
+            <div class="reveal-for-medium">
                 
                 <?php if(is_front_page()){ ?>
                 <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"></a></h1>
@@ -39,16 +39,20 @@
 
 
         <header class="site-header" role="banner">
-            <div class="site-title-bar title-bar" <?php foundationpress_title_bar_responsive_toggle(); ?>>
+            <div class="svg-header"></div>
+            <div class="site-title-bar title-bar">
                 <div class="title-bar-left">
-                    <button aria-label="<?php _e( 'Main Menu', 'foundationpress' ); ?>" class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
-                    <span class="site-mobile-title title-bar-title">
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-                    </span>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-mobile-title title-bar-title">
+                        <span class="show-for-sr"><?php bloginfo( 'name' ); ?></span>
+                        <?php get_template_part( 'template-parts/svg-logo' ); ?>
+                    </a>
+                    
+                    <button aria-label="<?php _e( 'Main Menu', 'foundationpress' ); ?>" class="text-center" type="button" id="mobile-menu-toggle">Options</button>
+                    
                 </div>
             </div>
 
-            <nav class="site-navigation top-bar hide-for-large" role="navigation">
+            <nav class="site-navigation top-bar hide-for-medium" role="navigation">
                 <div class="top-bar-left">
                     <div class="site-desktop-title top-bar-title">
                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>

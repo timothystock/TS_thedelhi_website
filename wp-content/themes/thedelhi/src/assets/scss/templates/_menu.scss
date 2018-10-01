@@ -167,13 +167,17 @@
     }
     
 }
+
+
 span.price {
 //    font-weight: 900;
     margin-left: .5rem;
     display: inline-block;
     font-weight: 900;
-    font-feature-settings: lnum;
     font-variant-numeric: lining-nums;
+      -moz-font-feature-settings: "lnum";
+      -webkit-font-feature-settings: "lnum";
+      font-feature-settings: "lnum";
 }
 .tags {
     .New {
@@ -284,3 +288,57 @@ form.cart {
         padding-left: 0.425rem;
     }
 }
+ul.products li.product_cat-mains-traditional,ul.products li.product_cat-british-indian-kitchen{
+    a h3.product-title {
+        padding-top:0;
+        font-size: 1.25rem;
+        margin-bottom: 0;
+        span.price {
+            font-family: "Playfair Display", "Georgia", serif;
+            font-size: 1rem;
+            font-weight: 900;
+            font-variant-numeric: lining-nums;
+              -moz-font-feature-settings: "lnum";
+              -webkit-font-feature-settings: "lnum";
+              font-feature-settings: "lnum";
+        }
+    }
+    p {margin-bottom: 0;}
+}
+//balti
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:700');
+li.post-318 h3.product-title,li.post-317 h3.product-title{font-family: 'PT Serif'; font-weight:700; }
+//bhuna 
+@import url('https://fonts.googleapis.com/css?family=Kalam');
+li.post-337 h3.product-title{font-family: 'Kalam';}
+//biryani 
+@import url('https://fonts.googleapis.com/css?family=Suez+One');
+li.post-327 h3.product-title{font-family: 'Suez One';}
+//chilli garlic
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+li.post-347 h3.product-title{font-family: 'roboto';}
+//dansak
+li.post-357 h3.product-title{font-family: 'rockwell';}
+//dupiaza
+@import url('https://fonts.googleapis.com/css?family=Lustria');
+li.post-367 h3.product-title{font-family: 'Lustria';}
+//jalfrezi 
+li.post-467 h3.product-title{font-family: 'seagull hv bt';}
+//korma
+@import url('https://fonts.googleapis.com/css?family=Yellowtail');
+li.post-387 h3.product-title{font-family: 'Yellowtail';}
+//madras
+li.post-397 h3.product-title{font-family: 'amperzand';}
+//makhni
+li.post-407 h3.product-title{font-family: 'sansserifbldflf';}
+//pathia
+li.post-417 h3.product-title{font-family: 'brothers ot';}
+//rogon josh 
+li.post-437 h3.product-title{font-family: 'acme';}
+//saagwala 
+li.post-447 h3.product-title{font-family: 'amulhed demo';}
+//tikka masala 
+li.post-514 h3.product-title{font-family: 'Poplar std';}
+//vindaloo 
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand');
+li.post-457 h3.product-title{font-family: 'Gochi Hand';}

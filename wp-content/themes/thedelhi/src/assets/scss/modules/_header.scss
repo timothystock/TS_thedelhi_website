@@ -1,3 +1,10 @@
+.site-header {
+    position: relative;
+    @include breakpoint(small only) {
+        min-height: 25vw;
+    }
+}
+
 .site-title {
     background-image: url(../images/Delhi_logo2018.png);
     background-size: 100% auto;
@@ -9,4 +16,53 @@
     position: relative;
     margin-top: 2rem;
     display: block;
+}
+
+.site-title-bar {
+    position: relative;
+    top:0;
+    width: 100%;
+    a.site-mobile-title {
+        width:60%;
+        max-width: 200px;
+        margin: 0 auto;
+        display: block;
+        height: 100px;
+        svg {
+            margin-top:-50px;
+            .st82{fill: #fff;}
+        }
+        #shapemark,#gate,#wordmark-bg {
+            display: none;
+        }
+        #logo-tagline{}
+        @include breakpoint(medium) {
+            height: auto;
+        }
+        
+    }
+}
+.title-bar-left {
+    justify-content: center;
+}
+.svg-header {
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/blue-illust2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-mask: url(../images/menu-shape.svg) no-repeat;
+    -webkit-mask-size: 110%;
+    -webkit-mask-position: center bottom;
+    mask: url(../images/menu-shape.svg) no-repeat;
+    mask-size: 110%;
+    mask-position: center bottom;
+    @include breakpoint(medium) {
+        display: none;
+    }
 }
