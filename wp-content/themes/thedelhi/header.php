@@ -47,11 +47,13 @@
                         <?php get_template_part( 'template-parts/svg-logo' ); ?>
                     </a>
                     
-                    <button aria-label="<?php _e( 'Main Menu', 'foundationpress' ); ?>" class="text-center" type="button" id="mobile-menu-toggle">Options</button>
+                    <button aria-label="<?php _e( 'Main Menu', 'foundationpress' ); ?>" class="text-center menu-icon" type="button" id="mobile-menu-toggle"><span class="show-for-sr">Options</span></button>
                     
                 </div>
             </div>
-
+            <div class="top-right">
+            
+            </div>
             <nav class="site-navigation top-bar hide-for-medium" role="navigation">
                 <div class="top-bar-left">
                     <div class="site-desktop-title top-bar-title">

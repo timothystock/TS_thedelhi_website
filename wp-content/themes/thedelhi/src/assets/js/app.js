@@ -57,9 +57,10 @@ if($(window).width() < 769 ) {
    
     $('ul#menu-main-menu').detach().appendTo('#mobile-menu');
     $('#mobile-menu-toggle').on('click', function() {
+        $('a.site-mobile-title').toggleClass('expanded');
         $('#mobile-menu').slideToggle();
         //    alert('clicked');
-
+        
     });
 } else {
 //    $('ul#menu-main-menu').detach().appendTo('.off-canvas-content');

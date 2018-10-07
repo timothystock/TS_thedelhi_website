@@ -63,8 +63,11 @@ if ( empty( $product ) || ! $product->is_visible() ) {
                     <?php echo $label; ?>Add to order
                 </button>
             -->
-    <div id="reveal_<?php echo $product_id; ?>" class="reveal addtocart grid-y" data-reveal>
-        <div class="addtocart-content cell">
+    <div id="reveal_<?php echo $product_id; ?>" class="reveal addtocart " data-reveal>
+        <div class="grid-x addtocart-content align-middle">
+<!--        <div class="addtocart-content cell auto">-->
+<!--            <div class="grid-x align-middle">-->
+                <div class="cell">
             <button class="close-button" data-close aria-label="Close modal" type="button">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -81,63 +84,66 @@ if ( empty( $product ) || ! $product->is_visible() ) {
                 <p><?php echo $product_description; ?></p>
 
          
-                <?php
+                    <?php
 
-            //		do_action( 'woocommerce_simple_add_to_cart' );
-            //do_action( 'woocommerce_grouped_add_to_cart');
-            //do_action( 'woocommerce_variable_add_to_cart' );
-            //do_action( 'woocommerce_external_add_to_cart' );
-            //do_action( 'woocommerce_single_variation' );
-            //do_action( 'woocommerce_single_variation_add_to_cart_button' );
+                    //		do_action( 'woocommerce_simple_add_to_cart' );
+                    //do_action( 'woocommerce_grouped_add_to_cart');
+                    //do_action( 'woocommerce_variable_add_to_cart' );
+                    //do_action( 'woocommerce_external_add_to_cart' );
+                    //do_action( 'woocommerce_single_variation' );
+                    //do_action( 'woocommerce_single_variation_add_to_cart_button' );
 
-                ?>
+                        ?>
 
 
-                <?php do_action( 'woocommerce_widget_product_item_end', $args ); ?>
-                <?php
-                /**
-                 * woocommerce_before_shop_loop_item hook.
-                 *
-                 * @hooked woocommerce_template_loop_product_link_open - 10
-                 */
-                //do_action( 'woocommerce_before_shop_loop_item' );
+                        <?php do_action( 'woocommerce_widget_product_item_end', $args ); ?>
+                        <?php
+                        /**
+                         * woocommerce_before_shop_loop_item hook.
+                         *
+                         * @hooked woocommerce_template_loop_product_link_open - 10
+                         */
+                        //do_action( 'woocommerce_before_shop_loop_item' );
 
-                /**
-                 * woocommerce_before_shop_loop_item_title hook.
-                 *
-                 * @hooked woocommerce_show_product_loop_sale_flash - 10
-                 * @hooked woocommerce_template_loop_product_thumbnail - 10
-                 */
-                //do_action( 'woocommerce_before_shop_loop_item_title' );
+                        /**
+                         * woocommerce_before_shop_loop_item_title hook.
+                         *
+                         * @hooked woocommerce_show_product_loop_sale_flash - 10
+                         * @hooked woocommerce_template_loop_product_thumbnail - 10
+                         */
+                        //do_action( 'woocommerce_before_shop_loop_item_title' );
 
-                /**
-                 * woocommerce_shop_loop_item_title hook.
-                 *
-                 * @hooked woocommerce_template_loop_product_title - 10
-                 */
-                //do_action( 'woocommerce_shop_loop_item_title' );
+                        /**
+                         * woocommerce_shop_loop_item_title hook.
+                         *
+                         * @hooked woocommerce_template_loop_product_title - 10
+                         */
+                        //do_action( 'woocommerce_shop_loop_item_title' );
 
-                /**
-                 * woocommerce_after_shop_loop_item_title hook.
-                 *
-                 * @hooked woocommerce_template_loop_rating - 5
-                 * @hooked woocommerce_template_loop_price - 10
-                 */
-                //do_action( 'woocommerce_after_shop_loop_item_title' );
+                        /**
+                         * woocommerce_after_shop_loop_item_title hook.
+                         *
+                         * @hooked woocommerce_template_loop_rating - 5
+                         * @hooked woocommerce_template_loop_price - 10
+                         */
+                        //do_action( 'woocommerce_after_shop_loop_item_title' );
 
-                /**
-                 * woocommerce_after_shop_loop_item hook.
-                 *
-                 * @hooked woocommerce_template_loop_product_link_close - 5
-                 * @hooked woocommerce_template_loop_add_to_cart - 10
-                 */
-            //	do_action( 'woocommerce_after_shop_loop_item' );
-            remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
-            remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-            remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-            remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-            do_action( 'woocommerce_single_product_summary' ); 
-                ?>
+                        /**
+                         * woocommerce_after_shop_loop_item hook.
+                         *
+                         * @hooked woocommerce_template_loop_product_link_close - 5
+                         * @hooked woocommerce_template_loop_add_to_cart - 10
+                         */
+                    //	do_action( 'woocommerce_after_shop_loop_item' );
+                        remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+                        remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+                        remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+                        remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+                        do_action( 'woocommerce_single_product_summary' ); 
+                    ?>
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
         </div>
     </div>
 </li>

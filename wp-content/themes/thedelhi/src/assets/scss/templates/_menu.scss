@@ -222,13 +222,15 @@ span.price {
         z-index:1;
         background-color: $white;
     }
+    &> .grid-x {
+        height:100%;
+    }
 }
 .addtocart-content {
     position:relative;
     z-index:2;
     background-color: $white;
     padding:1.25em;
-    
 }
 form.cart {
     .quantity, button.button {
@@ -236,7 +238,9 @@ form.cart {
         margin-bottom: 1rem;
         vertical-align: top;
     }
-    .product-title {color: $delhi-red;}
+    .product-title {
+        color: $delhi-red;
+    }
 }
 #Basket {
     padding: 1em;
