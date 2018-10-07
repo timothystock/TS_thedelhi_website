@@ -81,7 +81,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
                         <span class="price"><?php echo $product_price; ?></span>
                     </h3>
           
-                <p><?php echo $product_description; ?></p>
+                    <?php echo $product_description; ?>
 
          
                     <?php

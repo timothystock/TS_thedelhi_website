@@ -35,7 +35,7 @@
         transition: all .5s;
         svg {
             margin-top:-25%;
-            .st82{fill: #fff;}
+            .st82, .st80{fill: #fff;}
             transition: all .5s;
         }
         #shapemark,#gate,#wordmark-bg {
@@ -48,14 +48,15 @@
             transition: all .5s;
         }
         &.expanded {
+            max-height: 180px;
             svg {
                 margin-top:0;
                 #gate,#shapemark {
                     display: block;
                     transition: all .5s;
                 }
-                .st0 {fill: #7A002C;}
-//                .st82{fill: #7A002C;}
+//              .st0 {fill: #7A002C;}
+                .st80{fill: #7A002C;}
             }
         }
     }
