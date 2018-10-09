@@ -148,4 +148,14 @@ function wc_add_to_cart_message_filter($message, $product_id = null) {
     return $message;
 }
 
+function prefix_add_discount_line( $cart ) {
+  $chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
+  $chosen_shipping_no_ajax = $chosen_methods[0];
+  if ( 0 === strpos( $chosen_shipping_no_ajax, 'local_pickup' ) ) {
+
+    $discount = $cart->subtotal * 0.1;
+    $cart->add_fee( __( 'Collection discount applied', 'yourtext-domain' ) , -$discount );
+  }
+}
+add_action( 'woocommerce_cart_calculate_fees', 'prefix_add_discount_line');
 
