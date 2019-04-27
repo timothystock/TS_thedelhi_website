@@ -1,0 +1,12 @@
+form.wpcf7-form {
+    .wpcf7-form-control-wrap
+    input, textarea, select {
+        box-shadow: none;
+        border: 3px double $green;
+        height: auto;
+        border-radius: 26px;
+        &:focus {
+            outline: 4px solid $yellow;
+        }
+    }
+}

@@ -61,7 +61,31 @@
 //  55. Top Bar
 //  56. Xy Grid
 
-@import url('https://fonts.googleapis.com/css?family=Oswald:400|Playfair+Display:400,700,900|Roboto:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Oswald:400|Playfair+Display:400,700,900|Roboto:400,400i,700|Caveat:700');
+
+//@font-face {
+//  font-family: 'Playfair Numerals';
+//  src: url('../fonts/playfairdisplay-black-webfont.eot');                           /* IE9 Compat Modes */
+//  src: local('Playfair Display'), local('Playflair Display Black'),
+//       url('../fonts/playfairdisplay-black-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//       url('../fonts/playfairdisplay-black-webfont.woff2') format('woff2'),    /* Super Modern Browsers */
+//       url('../fonts/playfairdisplay-black-webfont.woff') format('woff'),     /* Pretty Modern Browsers */
+//       url('../fonts/playfairdisplay-black-webfont.ttf') format('truetype');    /* Safari, Android, iOS */
+////       url('raleway-regular.subset.svg#ralewayregular') format('svg');    /* Legacy iOS */
+//  font-style: normal;
+//  font-weight: 900;
+//}
+
+@font-face {
+    font-family: 'playfair_displayblack';
+    src: url('../fonts/playfairdisplay-black-webfont.eot');
+    src: url('../fonts/playfairdisplay-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/playfairdisplay-black-webfont.woff2') format('woff2'),
+         url('../fonts/playfairdisplay-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 @import 'util/util';
 @import 'global/colors';
@@ -70,7 +94,7 @@
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-width: rem-calc(640);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: $red,
@@ -290,7 +314,7 @@ $button-background: $primary-color;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;
-$button-radius: $global-radius;
+$button-radius: 25px;
 $button-hollow-border-width: 1px;
 $button-sizes: (
   tiny: 0.6rem,
@@ -732,7 +756,7 @@ $responsive-embed-ratios: (
 // 47. Reveal
 // ----------
 
-$reveal-background: $white;
+$reveal-background: transparent;
 $reveal-width: 600px;
 $reveal-max-width: $global-width;
 $reveal-padding: $global-padding;
@@ -854,7 +878,7 @@ $topbar-background: transparent;
 $topbar-submenu-background: transparent;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;
-$topbar-unstack-breakpoint: medium;
+$topbar-unstack-breakpoint: large;
 
 // 56. Xy Grid
 // -----------

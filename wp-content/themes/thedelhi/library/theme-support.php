@@ -49,3 +49,11 @@ if ( ! function_exists( 'foundationpress_theme_support' ) ) :
 
 	add_action( 'after_setup_theme', 'foundationpress_theme_support' );
 endif;
+
+
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page('Quotes');
+	acf_add_options_page('Footer');
+
+}

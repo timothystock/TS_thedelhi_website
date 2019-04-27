@@ -10,10 +10,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     2.3.0
+ * @see https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce/Templates
+ * @version 3.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,44 +23,64 @@ wc_print_notices();
 
 do_action( 'woocommerce_before_checkout_form', $checkout );
 
-// If checkout registration is disabled and not logged in, the user cannot checkout
+// If checkout registration is disabled and not logged in, the user cannot checkout.
 if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ) {
-	echo apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'woocommerce' ) );
+	echo esc_html( apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'woocommerce' ) ) );
 	return;
 }
 
 ?>
 
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
+	<div class="row grid-x grid-margin-x" data-sticky-containe>
+		<div class="cell medium-7">
+			<?php if ( $checkout->get_checkout_fields() ) : ?>
+				<div id="delivery_time" class="checkout_section">
+					<h2 id="delivery_time_heading">Choose a delivery time</h3>
+					<div id="delivery_time_content" class="checkout_section_content">
+						<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
+					</div>
+				</div>
+				<div class="checkout_section" id="customer_details">
+					<h2 id="customer_details_heading">Your details</h3>
+					<!-- <div class="col-1"> -->
+					<div id="customer_details_content" class="checkout_section_content">
+						<?php do_action( 'woocommerce_checkout_billing' ); ?>
+						<h3>Delivery address</h3>
+						<?php do_action( 'woocommerce_checkout_shipping' ); ?>
+					</div>
+					<!-- </div> -->
 
-	<?php if ( $checkout->get_checkout_fields() ) : ?>
+					<!-- <div class="col-2"> -->
+						
+					<!-- </div> -->
+				</div>
 
-		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
+				<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 
-		<div class="col2-set" id="customer_details">
-			<div class="col-1">
-				<?php do_action( 'woocommerce_checkout_billing' ); ?>
-			</div>
+			<?php endif; ?>
+		</div>
+		<div class="cell medium-5" data-stick data-margin="0">
+			<div id="order-review-wrapper">
+				<h3 id="order_review_heading"><?php _e( 'Your order', 'woocommerce' ); ?></h3>
 
-			<div class="col-2">
-				<?php do_action( 'woocommerce_checkout_shipping' ); ?>
+				<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
+
+				<div id="order_review" class="woocommerce-checkout-review-order row grid-x">
+					<?php do_action( 'woocommerce_checkout_order_review' ); ?>
+				</div>
+
+				<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
 			</div>
 		</div>
-
-		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
-
-	<?php endif; ?>
-
-	<h3 id="order_review_heading"><?php _e( 'Your order', 'woocommerce' ); ?></h3>
-
-	<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
-
-	<div id="order_review" class="woocommerce-checkout-review-order">
-		<?php do_action( 'woocommerce_checkout_order_review' ); ?>
 	</div>
-
-	<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
-
 </form>
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
+<script type="text/javascript">
+(function($) {
+	$( document ).ready(function() {	
+		$('p#openinghours_time_field').detach().appendTo('#delivery_time_content').css('display','block');
+	});
+})(jQuery);
+</script>

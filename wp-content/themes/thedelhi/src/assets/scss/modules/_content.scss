@@ -5,11 +5,14 @@
 .main-grid {
   @include xy-grid();
   margin-top: 1rem;
-
+  
   @include breakpoint(medium) {
     margin-top: 3rem;
   }
-
+    &> .grid-x {
+      min-width:100%;
+      flex: 1 1 auto;
+    }
   &.sidebar-left {
     // Place the sidebar below main content on small screens ...
     @include breakpoint(small) {
@@ -53,4 +56,21 @@
     }
 
   }
+}
+input[type=submit] {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    font-family: inherit;
+    padding: 0.85em 1em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #7a002c;
+    color: #fefefe;
 }

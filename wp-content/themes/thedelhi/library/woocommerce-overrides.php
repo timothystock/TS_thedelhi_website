@@ -159,3 +159,92 @@ function prefix_add_discount_line( $cart ) {
 }
 add_action( 'woocommerce_cart_calculate_fees', 'prefix_add_discount_line');
 
+//CHECK POST CODE
+
+//add_action( 'woocommerce_cart_coupon', array(&$this, 'new_woocommerce_cart_coupon'), 10, 0 );
+//add_action( 'template_redirect', array(&$this, 'new_post_code_cart_button_handler') );
+
+//function new_woocommerce_cart_coupon() {
+//
+//        <br/><br/><p>Enter your postcode</p><label for="post_code">Post Code</label> <input type="text" name="post_code" class="input-text" id="post_code" value="" /> <input type="submit" class="button" name="apply_post_code" value="Check Post Code" />
+//   
+//}
+
+function new_post_code_cart_button_handler() {
+    if( is_cart() && isset( $_POST['post_code'] ) && $_SERVER['REQUEST_METHOD'] == "POST" && !empty( $_POST['post_code'] ) ) {
+      //validate post code here
+    }
+}
+
+/**
+ * Set a minimum order amount for checkout
+ */
+// add_action( 'woocommerce_checkout_process', 'wc_minimum_order_amount' );
+// add_action( 'woocommerce_before_cart' , 'wc_minimum_order_amount' );
+ 
+function wc_minimum_order_amount() {
+    // Set this variable to specify a minimum order value
+    $minimum = 10;
+
+    if ( WC()->cart->total < $minimum ) {
+
+        if( is_cart() ) {
+
+            wc_print_notice( 
+                sprintf( 'Your current order total is %s — you must have an order with a minimum of %s to place your order ' , 
+                    wc_price( WC()->cart->total ), 
+                    wc_price( $minimum )
+                ), 'error' 
+            );
+
+        } else {
+
+            wc_add_notice( 
+                sprintf( 'Your current order total is %s — you must have an order with a minimum of %s to place your order' , 
+                    wc_price( WC()->cart->total ), 
+                    wc_price( $minimum )
+                ), 'error' 
+            );
+
+        }
+    }
+}
+
+// $instance = WC_Checkout::instance();
+// remove_action( 'woocommerce_checkout_billing', array( $instance, 'checkout_form_billing' ) );
+
+// ORDER DELIVERY TIMES OVERRIDES - this doesn't work. not sure why. Directly editing the plugin works, so will have to resort to javascript.
+// add_filter('openinghours_chooser_position', 'delhi_openinghours_chooser_position');
+// function delhi_openinghours_chooser_position() { 
+//     $c = "woocommerce_checkout_before_customer_details";
+//     return $c; 
+
+// }
+
+// openinghours_timepickercontroltype
+add_filter('openinghours_timepickercontroltype', 'delhi_openinghours_timepickercontroltype');
+function delhi_openinghours_timepickercontroltype($t) { 
+//     controlType
+    return "select";
+}
+
+add_filter('openinghours_frontendtext_choicelabel', 'my_openinghours_frontendtext_choicelabel');
+function my_openinghours_frontendtext_choicelabel($message) { 
+    
+    $message = "Choose when you'd like to order for"; 
+    return $message;
+}
+
+
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
+
+
+/**
+ * Changes the redirect URL for the Return To Shop button in the cart.
+ *
+ * @return string
+ */
+function wc_empty_cart_redirect_url() {
+	return '/menu/';
+}
+add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );

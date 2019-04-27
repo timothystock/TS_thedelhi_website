@@ -70,6 +70,7 @@
 @import "modules/header";
 @import "modules/footer";
 @import "modules/editor-style";
+@import "modules/forms";
 
 // Components
 @import "components/buttons";
@@ -79,9 +80,10 @@
 @import "components/links";
 
 // Templates
-@import "templates/front";
+@import "templates/homepage";
 @import "templates/menu";
 @import "templates/kitchen-sink";
+@import "templates/checkout";
 
 //WooCommerce
 @import "woo-overrides/woocommerce.scss";

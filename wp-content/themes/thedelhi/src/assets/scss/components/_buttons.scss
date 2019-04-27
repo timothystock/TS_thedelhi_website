@@ -6,3 +6,45 @@
   border-radius: 3px;
   border: none;
 }
+
+
+.button, button, .button.alt {
+  // &:not(.td-quantity-button){
+  // background-color: transparent;
+  // background:red;
+  // background:
+  // linear-gradient(135deg, transparent 6px, #c00 0) top left,
+	// 	linear-gradient(225deg, transparent 6px, #c00 0) top right,
+	// 	linear-gradient(315deg, transparent 6px, #c00 0) bottom right,
+  //   linear-gradient(45deg,  transparent 6px, #c00 0) bottom left;
+  // background-size: 50% 50%;
+  // background-repeat: no-repeat;
+  // background-image:
+	// 	radial-gradient(circle at 0 0, rgba(204,0,0,0) 8px, #c00 9px),
+	// 	radial-gradient(circle at 100% 0, rgba(204,0,0,0) 8px, #c00 9px),
+	// 	radial-gradient(circle at 100% 100%, rgba(204,0,0,0) 8px, #c00 9px),
+	// 	radial-gradient(circle at 0 100%, rgba(204,0,0,0) 8px, #c00 9px);}
+    
+//   position: relative;
+//   &:before {
+//     content: "";
+//     display: block;
+//     background-image: url("../images/arrow-left.svg");
+//     right: 100%;
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//   }
+//   &:after {
+//     content: "";
+//     display: block;
+//     background-image: url("../images/arrow-right.svg");
+//     left: 100%;
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//   }
+}
+[type='submit'],[type='button'] {
+  border-radius: 25px !important;
+}

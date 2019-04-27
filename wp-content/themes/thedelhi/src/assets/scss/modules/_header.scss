@@ -1,6 +1,6 @@
 .site-header {
     position: relative;
-    @include breakpoint(small only) {
+    @include breakpoint(medium down) {
 //        min-height: 25vw;
 //        padding-bottom: 20px;
             min-height: 118px;
@@ -9,7 +9,7 @@
 }
 
 .site-title {
-    background-image: url(../images/Delhi_logo2018.png);
+    background-image: url(../images/Delhi_logo2018.svg);
     background-size: 100% auto;
     background-position: center;
     background-repeat: no-repeat;
@@ -27,32 +27,40 @@
     width: 100%;
     a.site-mobile-title {
         width:60%;
-        max-width: 200px;
+        max-width: 180px;
         margin: 0 auto;
         display: block;
         height: 30vw;
-        max-height: 100px;
+        max-height: 85px;
         transition: all .5s;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
         svg {
             margin-top:-25%;
             .st82, .st80{fill: #fff;}
             transition: all .5s;
         }
         #shapemark,#gate,#wordmark-bg {
-            display: none;
+            opacity: 0;
             transition: all .5s;
         }
         #logo-tagline{}
-        @include breakpoint(medium) {
+        @include breakpoint(large) {
             height: auto;
             transition: all .5s;
         }
         &.expanded {
-            max-height: 180px;
+            max-height: 200px;
+            height: auto;
+            @include breakpoint(medium) {
+                max-width: 240px;
+            }
             svg {
                 margin-top:0;
                 #gate,#shapemark {
-                    display: block;
+                    opacity: 1;
+//                    display: block;
                     transition: all .5s;
                 }
 //              .st0 {fill: #7A002C;}
@@ -60,6 +68,37 @@
             }
         }
     }
+}
+#mobile-basket-toggle {
+    display: none;
+}
+#call-us-now-button {
+    position: fixed;
+    bottom: 0;
+    left: 2%;
+    right: 2%;
+    width: 96%;
+    margin-bottom: 10px;
+    padding: 1rem;
+    z-index: 1000;
+}
+body.home {
+    a.site-mobile-title {
+            max-height: 167px;
+            height: auto;
+            @include breakpoint(medium) {
+                max-width: 200px;
+            }
+            svg {
+                margin-top:0;
+                #gate,#shapemark {
+                    opacity: 1;
+                    transition: all .5s;
+                }
+//              .st0 {fill: #7A002C;}
+                .st80{fill: #7A002C;}
+            }
+        }
 }
 .title-bar-left {
     justify-content: center;
@@ -81,7 +120,7 @@
     mask: url(../images/menu-shape.svg) no-repeat;
     mask-size: 110%;
     mask-position: center bottom;
-    @include breakpoint(medium) {
+    @include breakpoint(large) {
         display: none;
     }
 }

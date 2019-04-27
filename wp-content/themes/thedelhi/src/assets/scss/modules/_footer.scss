@@ -1,15 +1,164 @@
+footer.footer {
+  
+  min-height: 25vh;
+}
 .footer-container {
   @include xy-grid-container;
-  border-top: 1px solid $medium-gray;
+  // border-top: 1px solid $medium-gray;
   margin-top: rem-calc(60);
+}
+.TA_cdsscrollingravenarrow, .TA_certificateOfExcellence {
+  padding:0;
+  & > img {
+    position: absolute;
+  }
+}
+.custom-html-widget {
+  // display: flex;
+  // flex:1 1 100%;
+  // height: 100%;
+  // -webkit-flex: 0 1 auto;
+  //   -ms-flex: 0 1 auto;
+  //   flex: 0 1 auto;
+  //   min-height: 0px;
+  //   min-width: 0px;
+  //   width: 100%;
+
+  // flex-direction: column;
+  // align-content: center;
+  position: relative;
+  &:before {
+    content:'';
+    height:2px;
+    position:absolute;
+    left:22px;
+    right:22px;
+    top:0;
+    background-image: url(../images/dotted-line.svg);
+    background-size:auto;
+    background-repeat:repeat-x;
+    // border-top: 2px dotted coral;
+  }
+  &:after {
+    content:'';
+    height:2px;
+    position:absolute;
+    left:22px;
+    right:22px;
+    bottom:0;
+    background-image: url(../images/dotted-line.svg);
+    background-size:auto;
+    background-repeat:repeat-x;
+  }
+}
+.footer-feature-wrapper {
+  align-self: center;
+  width:100%;
+  overflow: hidden;
+  text-align: center;
+  padding:15px;
+  position: relative;
+  height: 168px;
+  border: 0px solid black;
+  &:before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-1px;
+    bottom:0;
+    width:24px;
+    background-image:url(../images/concave-26.svg);
+    background-size: auto 100% ;
+    background-repeat: no-repeat;
+  }
+  &:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:-2px;
+    bottom:0;
+    width:24px;
+    background-image:url(../images/concave-27.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+  }
+}
+.footer-grid {
+  section{
+    &:first-child {
+      // background: blue;
+      .custom-html-widget{
+        &:before {
+          background-image: url(../images/dotted-line-yellow.svg)
+        }
+        &:after {
+          background-image: url(../images/dotted-line-yellow.svg);
+        }
+      }
+      .footer-feature-wrapper{
+        &:before {
+          background-image: url(../images/concave-28.svg);
+        }
+        &:after {
+          background-image: url(../images/concave-29.svg);
+        }
+      }
+    }
+    &:last-child {
+      .custom-html-widget{
+        &:before {
+          background-image: url(../images/dotted-line-blue.svg)
+        }
+        &:after {
+          background-image: url(../images/dotted-line-blue.svg);
+        }
+      }
+      .footer-feature-wrapper{
+        &:before {
+          background-image: url(../images/concave-30.svg);
+        }
+        &:after {
+          background-image: url(../images/concave-31.svg);
+        }
+      }
+    }
+  }
+}
+
+//tripadvisor overrides
+#CDSSCROLLINGRAVE {
+  margin:42px auto !important;
+  border:0px !important;
+  background-color: transparent;
+  max-width: 100%;
+}
+#CDSWIDCOE.widCOE {
+  margin: 6px auto 18px !important;
+  border:0px !important;
+  background-color: transparent;
 }
 
 .footer-grid {
-  @include xy-grid;
+  // @include xy-grid;
   padding: rem-calc(30) 0;
-
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
   section {
-    @include xy-cell(auto);
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem;
+    // @include xy-cell(auto); 
+    min-height: 0px; 
+   
+    -webkit-flex: 1 1 0px;
+    -ms-flex: 1 1 0px;
+    flex: 1 1 0px;
+   min-width:100%; 
+   margin-bottom:1rem;
+   @include breakpoint(medium){ min-width: 0px;width: auto;}
   }
 
   ul {

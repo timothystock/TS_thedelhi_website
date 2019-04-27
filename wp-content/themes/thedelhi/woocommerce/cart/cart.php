@@ -11,20 +11,22 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @author  WooThemes
+
  * @package WooCommerce/Templates
- * @version 3.4.0
+ * @version 3.5.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 wc_print_notices();
 
-do_action( 'woocommerce_before_cart' ); ?>
-
+ ?>
+ 
+<div class="cell wc-proceed-to-checkout">
+	<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+</div>
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
+    
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>
 
 	<div class="shop_table shop_table_responsive cart woocommerce-cart-form__contents grid-x grid-padding-x" >
@@ -62,10 +64,10 @@ do_action( 'woocommerce_before_cart' ); ?>
                         
 						<div class="cell auto product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
                             <?php
-                            echo '<h6><strong>';
+                            echo '<h6>';
 							echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;';
                     echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
-									'</strong></h6><p style="line-height:1"><a href="%s" class="product-remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">Remove</a></p>',
+									'</h6><p style="line-height:1"><a href="%s" class="product-remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">Remove</a></p>',
 									esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
 									__( 'Remove this item', 'woocommerce' ),
 									esc_attr( $product_id ),
@@ -115,14 +117,14 @@ do_action( 'woocommerce_before_cart' ); ?>
 <!--			<div class="grid-container">-->
 				<div class="actions grid-x">
                     <div class="cell text-right"><button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button></div>
-					<?php if ( wc_coupons_enabled() ) { ?>
-						<div class="coupon cell">
+					<?php //if ( wc_coupons_enabled() ) { ?>
+						<!-- <div class="coupon cell">
                             <div class="grid-x">
 							<label for="coupon_code" class="cell "><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text cell auto" style="margin-bottom: 0;" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="button cell shrink" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>" />
 							<?php do_action( 'woocommerce_cart_coupon' ); ?>
                                 </div>
-						</div>
-					<?php } ?>
+						</div> -->
+					<?php //} ?>
 
 					
 
@@ -151,3 +153,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 </div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>
+<button class="button hide-for-medium" data-close aria-label="Close modal" type="button">
+    <?php _e( 'Return to menu', 'woocommerce' ) ?>
+</button>

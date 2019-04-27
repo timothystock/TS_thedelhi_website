@@ -111,22 +111,28 @@ p.demo_store,
 		}
 	}
 
-	.quantity .qty {
-		width: 2.75em;
-		text-align: center;
-        appearance: none;
-        -webkit-appearance: none;
-//        border-width: 0 0 2px 0;
-        //border-bottom-color: $delhi-coral;
-        border: 2px dotted $delhi-coral;
-        box-shadow: none;
-        padding: .125em;
-//        height: 2.25rem;
-        height: 40px;
-        margin-bottom: 0;
-        margin-top: 0;
-	}
-    
+	.quantity {
+		border: 2px dotted $delhi-coral;
+		border-radius: 24px;
+		background: $white;
+        margin:0;
+		.qty {
+			width: 1.25rem;
+			text-align: center;
+			appearance: none;
+			-webkit-appearance: none;
+	//        border-width: 0 0 2px 0;
+			//border-bottom-color: $delhi-coral;
+			// border: 2px dotted $delhi-coral;
+			border-width: 0px;
+			box-shadow: none;
+			padding: .125em;
+	//        height: 2.25rem;
+			height: 34px;
+			margin-bottom: 0;
+			margin-top: 0;
+		}
+    }
 	/**
 	 * Product Page
 	 */
@@ -421,7 +427,7 @@ p.demo_store,
 			@include clearfix();
 
 			div.quantity {
-				float: left;
+				// float: left;
 				margin: 0 4px 0 0;
 			}
 
@@ -593,11 +599,11 @@ p.demo_store,
 
 		.price {
 //			color: $highlight;
-            margin-left: .5rem;
-			display: inline-block;
-			font-weight: 900;
-            font-feature-settings: lnum;
-            font-variant-numeric: lining-nums;
+//            margin-left: .5rem;
+//			display: inline-block;
+//			font-weight: 900;
+//            font-feature-settings: lnum;
+//            font-variant-numeric: lining-nums;
 //			margin-bottom: 0.5em;
 //			font-size: 0.857em;
 
@@ -696,7 +702,7 @@ p.demo_store,
 //		border-radius: 3px;
 //		left: auto;
 //		color: $secondarytext;
-//		background-color: $secondary;
+		background-color: $primary-color;
 //		border: 0;
 //		display: inline-block;
 //		background-image: none;
@@ -734,7 +740,7 @@ p.demo_store,
 		}
 
 		&.alt {
-			background-color: $primary;
+			// background-color: $primary;
 			color: $primarytext;
 			-webkit-font-smoothing: antialiased;
 
@@ -1704,14 +1710,14 @@ button.pswp__button--zoom:hover {
 	position: relative;
 //	background-color: lighten($secondary, 5%);
 	color: $delhi-red;
-	border: 2px solid $red;
+	border: 2px dotted $red;
 	list-style: none outside;
 	@include clearfix();
 	width: auto;
 	word-wrap: break-word;
     text-align: center;
     font-weight:bold;
-    border-radius: 7px;
+    border-radius: 0px;
 //	&::before {
 //		font-family: 'WooCommerce';
 //		content: '\e028';

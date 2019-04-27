@@ -20,4 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
+<div class="svg-wrapper">
+<svg class="arrow-up" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 394.5 120.3" style="enable-background:new 0 0 394.5 120.3;" xml:space="preserve">
+<path class="arrow-fill" d="M16.6,120.3C99,120.3,167,71.7,197.2,0c30.2,71.7,98.2,120.3,180.6,120.3H16.6z"/>
+</svg></div>
 <ul class="products columns-1">

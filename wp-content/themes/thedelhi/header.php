@@ -20,9 +20,9 @@
 	<body <?php body_class(); ?>>
 
 	<div class="off-canvas-wrapper">
-    <nav class="mobile-off-canvas-menu off-canvas position-left reveal-for-medium" data-auto-focus="false" role="navigation">
+    <nav class="mobile-off-canvas-menu off-canvas position-left reveal-for-large" data-auto-focus="false" role="navigation">
         <div class="off-canvas-content">
-            <div class="reveal-for-medium">
+            <div class="reveal-for-large">
                 
                 <?php if(is_front_page()){ ?>
                 <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"></a></h1>
@@ -46,15 +46,31 @@
                         <span class="show-for-sr"><?php bloginfo( 'name' ); ?></span>
                         <?php get_template_part( 'template-parts/svg-logo' ); ?>
                     </a>
-                    
+                    <?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+
+                     $count = WC()->cart->cart_contents_count; ?>
                     <button aria-label="<?php _e( 'Main Menu', 'foundationpress' ); ?>" class="text-center menu-icon" type="button" id="mobile-menu-toggle"><span class="show-for-sr">Options</span></button>
-                    
+                    <button aria-label="<?php _e( 'View your order', 'foundationpress' ); ?>" class="text-center button hide-for-medium" data-open="basket-reveal-wrapper" id="mobile-basket-toggle">
+                        <!-- <span class="show-for-sr"> -->
+                            View your order<?php 
+                                if ( $count > 0 ) {
+                                    ?>
+                                    <span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
+                                    <?php
+                                }
+                            ?>
+                        <!-- </span> -->
+                    </button> 
+                    <?php } ?>
+                    <a href="tel:+441217051020" class="text-center button hide-for-medium" id="call-us-now-button">
+                        Call us now
+                    </a>
                 </div>
             </div>
             <div class="top-right">
-            
+                    
             </div>
-            <nav class="site-navigation top-bar hide-for-medium" role="navigation">
+            <nav class="site-navigation top-bar hide-for-large" role="navigation">
                 <div class="top-bar-left">
                     <div class="site-desktop-title top-bar-title">
                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
@@ -62,7 +78,8 @@
                 </div>
                 <div class="top-bar-right">
                     <?php foundationpress_top_bar_r(); ?>
-
+                    
+                    
                     <?php //if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
                         <?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
                     <?php // endif; ?>

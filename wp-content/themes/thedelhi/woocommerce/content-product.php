@@ -30,38 +30,63 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 <li <?php post_class(); ?>>
      <?php 
 
-            
-            
+            // $product = wc_get_product();
             $product_id = $product->get_id();
             $product_title = $product->get_name();
-            $product_price = esc_attr( $product->get_price() );
+            
+            // $product_price = esc_attr( $product->get_variation_regular_price( 'min', true ) );
+            $is_variable = $product->is_type('variable');
+            if($is_variable) {
+                $product_price = "<i>from</i> " . esc_attr( $product->get_variation_regular_price( 'min', true ) );
+            } else {
+                $product_price = esc_attr( $product->get_price() );
+            }
             $product_description = $product->get_description();
     
     ?>
-    <a href="#" data-open="reveal_<?php echo $product_id; ?>" style="display:block">
+    <!-- <a href="#" data-open="reveal_<?php echo $product_id; ?>" style="display:block"> -->
+    <!-- <div> -->
+
+        <?php if($product_description) { ?>
+
         <h3 class="product-title" style="display:block;"><?php echo $product_title; ?>
+            <span class="tags"></span><span class="price" style="display:inline-block;"><?php echo $product_price; ?></span>
+        </h3>
+       
+        <p> 
+            <?php echo $product_description; ?>
              <?php
-                $producttags = get_the_terms( $product->get_id(), product_tag );
+                $producttags = get_the_terms( $product->get_id(), 'product_tag' );
                 if ($producttags) {
-                  echo '<div class="tags" style="display:inline-block;">';
+                  echo '<i class="tags" style="display:inline-block;">';
                   foreach($producttags as $tag) {
                     echo '<span  class="' .$tag->name. '">' .$tag->name. '</span>'; 
                   }
-                  echo '</div>';
+                  echo '</i>';
                 }
             ?>
-        
-        
-         
-            <span class="price" style="display:inline-block;"><?php echo $product_price; ?></span></h3>
-        <p><?php echo $product_description; ?></p>
-        
-    </a>
-       <!--
-                <button type="submit" data-quantity="1" data-product_id="<?php echo $product->id; ?>"
-                    class="button alt ajax_add_to_cart add_to_cart_button product_type_simple">
-                    <?php echo $label; ?>Add to order
-                </button>
+        </p>
+        <?php } else {?>
+         <h3 class="product-title" style="display:block;"><?php echo $product_title; ?>
+              <?php
+                $producttags = get_the_terms( $product->get_id(), 'product_tag' );
+                if ($producttags) {
+                  echo '<i class="tags" style="display:inline-block;">';
+                  foreach($producttags as $tag) {
+                    echo '<span  class="' .$tag->name. '">' .$tag->name. '</span>'; 
+                  }
+                  echo '</i>';
+                }
+            ?>
+            <span class="price" style="display:inline-block;"><?php echo $product->get_price_html(); ?></span>
+        </h3>
+        <?php } ?>
+       <!-- </div> -->
+       <!--</a>
+            <button type="submit" data-quantity="1" data-product_id="<?php echo $product->id; ?>"
+                class="button alt ajax_add_to_cart add_to_cart_button product_type_simple">
+                <?php echo $label; ?>Add to order
+            </button>
             -->
     <div id="reveal_<?php echo $product_id; ?>" class="reveal addtocart " data-reveal>
         <div class="grid-x addtocart-content align-middle">
@@ -73,16 +98,27 @@ if ( empty( $product ) || ! $product->is_visible() ) {
             </button>
                <?php do_action( 'woocommerce_widget_product_item_start', $args ); ?>
 
-                    <h3 class="product-title">
-                        <?php echo $product_title; ?>
-                        
-                        <?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tags">' . _n( '', '', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
-
-                        <span class="price"><?php echo $product_price; ?></span>
+                   
+                    <h3 class="product-title" style="display:block;"><?php echo $product_title; ?>
+                        <span class="tags"></span><span class="price" style="display:inline-block;"><?php echo $product_price; ?></span>
                     </h3>
-          
-                    <?php echo $product_description; ?>
 
+                    <p> <?php if($product_description) { ?>
+                        <?php echo $product_description; ?>
+                         <?php } ?>
+                         <?php
+                            $producttags = get_the_terms( $product->get_id(), 'product_tag' );
+                            if ($producttags) {
+                              echo '<i class="tags" style="display:inline-block;">';
+                              foreach($producttags as $tag) {
+                                echo '<span  class="' .$tag->name. '">' .$tag->name. '</span>'; 
+                              }
+                              echo '</i>';
+                            }
+                        ?>
+                    </p>
+                    
+                   
          
                     <?php
 

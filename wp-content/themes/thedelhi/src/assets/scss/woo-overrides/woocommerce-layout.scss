@@ -30,12 +30,12 @@
 		width: 100%;
 
 		.col-1 {
-			float: left;
-			width: 48%;
+			// float: left;
+			// width: 48%;
 		}
 		.col-2 {
-			float: right;
-			width: 48%;
+			// float: right;
+			// width: 48%;
 		}
 	}
 
@@ -100,9 +100,9 @@
 		}
 
 		div.summary {
-			float: right;
-			width: 48%;
-			clear: none;
+			// float: right;
+			// width: 48%;
+			// clear: none;
 		}
 
 		.woocommerce-tabs {
@@ -130,10 +130,11 @@
 		li.product {
 			float: left;
 			margin: 0 3.8% 2.992em 0;
-			padding: 0;
+			padding: 0 1rem;
 			position: relative;
 			width: 22.05%;
 			margin-left: 0;
+			p {font-size: 14px;}
 		}
 
 		li.first {

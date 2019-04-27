@@ -10,11 +10,20 @@
 ?>
 
     <footer class="footer">
-        <div class="footer-container">
+        <!-- <div class="footer-container"> -->
             <div class="footer-grid">
                 <?php dynamic_sidebar( 'footer-widgets' ); ?>
+                    <!-- <div class="cell medium-4">
+						Trip advisor
+					</div>
+					<div class="cell medium-4">
+						Trip Advisor quotes
+					</div>
+					<div class="cell medium-4">
+						Best of Solihull
+					</div> -->
             </div>
-        </div>
+        <!-- </div> -->
     </footer>
 
 	</div><!-- Close off-canvas content -->

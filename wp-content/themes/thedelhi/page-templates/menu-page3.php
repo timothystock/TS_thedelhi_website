@@ -9,11 +9,11 @@ get_header(); ?>
       
         <div class="row grid-x grid-padding-x" data-sticky-container>
             <div class="columns cell medium-7">
-                <div class="menu-page">
-                   
-                      <div class="" id="starters">
+                <div id="menu-page" class="menu-page">
+                <?php do_action( 'woocommerce_before_cart' ); ?>
+                      <div class="region-wrapper" id="starters">
                           <h2>Starters &amp; Street Plates</h2>
-                          <div class="" role="region" aria-label="starters" style="max-width:100%; overflow-x:hidden;">
+                          <div class="region" role="region" aria-label="starters" style="max-width:100%; overflow-x:hidden;">
 
                                 <div class="figure">
                                 <h3>Street Plates</h3>
@@ -28,9 +28,9 @@ get_header(); ?>
                           </div>
                           
                       </div>
-                      <div class="" id="delhi-mains">
+                      <div class="region-wrapper" id="delhi-mains">
                           <h2>Specialities</h2>
-                          <div class="" role="region" aria-label="Delhi Main Event" style="max-width:100%; overflow-x:hidden;">
+                          <div class="region" role="region" aria-label="Delhi Main Event" style="max-width:100%; overflow-x:hidden;">
 
                                         
                                 <div class="figure"><h3>Bangladeshi Babouchi</h3>
@@ -60,9 +60,9 @@ get_header(); ?>
                             </div>
                       </div>
                      
-                      <div class="" id="sides">
+                      <div class="region-wrapper" id="sides">
                           <h2>On the side</h2>
-                          <div class="" role="region" aria-label="sides" style="max-width:100%; overflow-x:hidden;">
+                          <div class="region" role="region" aria-label="sides" style="max-width:100%; overflow-x:hidden;">
                              
                               <div class="figure"><h3>Cards</h3>
                                   <?php echo do_shortcode( '[product_category category=carbs title=true limit="16"]' ); ?>
@@ -78,12 +78,16 @@ get_header(); ?>
                 </div>
             </div>
             <div class="cell medium-5"  data-sticky-container>
-            
-                <div id="Basket" class="sticky"  data-sticky data-margin-top="2"><?php echo do_shortcode( '[woocommerce_cart]' ); ?></div>
-                  
+                <div id="basket-sticky-wrapper" class="sticky" data-sticky data-margin-top="4" data-sticky-on="medium" data-top-anchor="menu-page:top" data-update-history="true">
+                    <div id="Basket" ><?php echo do_shortcode( '[woocommerce_cart]' ); ?></div>
+                </div>
             </div>
         </div>
         
     </div>
 </div>
+<div id="basket-reveal-wrapper" class="reveal" data-reveal>
+    
+</div>
+
 <?php get_footer();

@@ -9,11 +9,11 @@ get_header(); ?>
       
         <div class="row grid-x grid-padding-x" data-sticky-container>
             <div class="columns cell medium-7">
-                <div class="menu-page">
-                   
-                      <div class="" id="appetisers">
+                <div id="menu-page" class="menu-page">
+                    <?php do_action( 'woocommerce_before_cart' ); ?>
+                      <div class="region-wrapper" id="appetisers">
                           <h2>Appetisers</h2>
-                          <div class="" role="region" aria-label="appetisers" style="max-width:100%; overflow-x:hidden;">
+                          <div class="region" role="region" aria-label="appetisers" style="max-width:100%; overflow-x:hidden;">
 
                                 <div class="figure">
                                 <h3>To share</h3>
@@ -35,14 +35,14 @@ get_header(); ?>
                           </div>
                           
                       </div>
-                      <div class="" id="speciality">
+                      <div class="region-wrapper" id="speciality">
                           <h2>Specialities</h2>
-                          <div class="" role="region" aria-label="speciality" style="max-width:100%; overflow-x:hidden;">
+                          <div class="region" role="region" aria-label="speciality" style="max-width:100%; overflow-x:hidden;">
 
                                         
-                                <div class="figure"><h3>House Specials</h3>
+                                <!-- <div class="figure"><h3>House Specials</h3>
                                   <?php echo do_shortcode( '[product_category category=specialities-house-specials title=true limit="16"]' ); ?>
-                                </div>
+                                </div> -->
 
                                 <div class="figure"><h3>Chicken</h3>
                                   <?php echo do_shortcode( '[product_category category=specialities-chicken title=true limit="16"]' ); ?>
@@ -68,19 +68,19 @@ get_header(); ?>
 
                             </div>
                       </div>
-                      <div class="" id="classic">
+                      <div class="region-wrapper" id="classic">
                           <h2>Classic Mains</h2>
-                          <div class="" role="region" aria-label="mains" style="max-width:100%; overflow-x:hidden;">
+                          <div class="region" role="region" aria-label="mains" style="max-width:100%; overflow-x:hidden;">
                              
-                              <div class="figure">
-                                  <?php echo do_shortcode( '[product_category category=mains-traditional title=true limit="16"]' ); ?>
+                              <div class="figure"><h3>Traditional</h3>
+                                  <?php echo do_shortcode( '[product_category category=traditional title=true limit="16"]' ); ?>
                               </div>
                              
                           </div>
                       </div>
-                      <div class="" id="sundries">
+                      <div class="region-wrapper" id="sundries">
                           <h2>Bread, Rice &amp; Sundries</h2>
-                          <div class="" role="region" aria-label="sides" style="max-width:100%; overflow-x:hidden;">
+                          <div class="region" role="region" aria-label="sides" style="max-width:100%; overflow-x:hidden;">
                              
                               <div class="figure"><h3>Breads</h3>
                                   <?php echo do_shortcode( '[product_category category=sides-breads title=true limit="16"]' ); ?>
@@ -101,12 +101,28 @@ get_header(); ?>
                 </div>
             </div>
             <div class="cell medium-5"  data-sticky-container>
-            
-                <div id="Basket" class="sticky"  data-sticky data-margin-top="2"><?php echo do_shortcode( '[woocommerce_cart]' ); ?></div>
-                  
+                <div id="basket-sticky-wrapper" class="sticky" data-sticky data-options="marginTop:4rem;marginBtm:11rem;" data-sticky-on="medium" data-top-anchor="menu-page:top" data-update-history="true">
+                    <div id="Basket" ><?php echo do_shortcode( '[woocommerce_cart]' ); ?></div>
+                </div>
             </div>
         </div>
         
     </div>
 </div>
+<div id="basket-reveal-wrapper" class="reveal" data-reveal>
+    
+</div>
+<!-- <script type="text/javascript">
+(function($) {
+    $('.figure .woocommerce').hide();
+    $('.figure > h3').on('click', function() {
+        $(this).toggleClass('expanded');
+        $(this).parent('.figure').find('.woocommerce').slideToggle();
+        var figures = $(this).parent('.figure').siblings('.figure');
+        $(figures).find('h3.expanded').removeClass('expanded').siblings('.woocommerce').slideToggle();
+    //    $(figures).find('h3').removeClass('expanded');
+    //    $(figures).find('.woocommerce').hide();
+    });
+})(jQuery);
+</script> -->
 <?php get_footer();
