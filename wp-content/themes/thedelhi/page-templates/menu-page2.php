@@ -11,6 +11,16 @@ get_header(); ?>
             <div class="columns cell medium-7">
                 <div id="menu-page" class="menu-page">
                     <?php do_action( 'woocommerce_before_cart' ); ?>
+                      <div class="region-wrapper" id="deals">
+                          <h2>Meal Deals</h2>
+                          <div class="region" role="region" aria-label="deals" style="max-width:100%; overflow-x:hidden;">
+                             
+                              <div class="figure"><h3>Meal Deals</h3>
+                                  <?php echo do_shortcode( '[product_category category=meal-deals title=true limit="160"]' ); ?>
+                              </div>
+                             
+                          </div>
+                      </div>
                       <div class="region-wrapper" id="appetisers">
                           <h2>Appetisers</h2>
                           <div class="region" role="region" aria-label="appetisers" style="max-width:100%; overflow-x:hidden;">
@@ -73,7 +83,7 @@ get_header(); ?>
                           <div class="region" role="region" aria-label="mains" style="max-width:100%; overflow-x:hidden;">
                              
                               <div class="figure"><h3>Traditional</h3>
-                                  <?php echo do_shortcode( '[product_category category=traditional title=true limit="16"]' ); ?>
+                                  <?php echo do_shortcode( '[product_category category=mains title=true limit="16"]' ); ?>
                               </div>
                              
                           </div>

@@ -44,7 +44,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
             $product_description = $product->get_description();
     
     ?>
-    <!-- <a href="#" data-open="reveal_<?php echo $product_id; ?>" style="display:block"> -->
+    <a href="#" data-open="reveal_<?php echo $product_id; ?>" style="display:block">
     <!-- <div> -->
 
         <?php if($product_description) { ?>
@@ -82,12 +82,12 @@ if ( empty( $product ) || ! $product->is_visible() ) {
         </h3>
         <?php } ?>
        <!-- </div> -->
-       <!--</a>
-            <button type="submit" data-quantity="1" data-product_id="<?php echo $product->id; ?>"
+       </a>
+            <!-- <button type="submit" data-quantity="1" data-product_id="<?php echo $product->id; ?>"
                 class="button alt ajax_add_to_cart add_to_cart_button product_type_simple">
                 <?php echo $label; ?>Add to order
-            </button>
-            -->
+            </button> -->
+           
     <div id="reveal_<?php echo $product_id; ?>" class="reveal addtocart " data-reveal>
         <div class="grid-x addtocart-content align-middle">
 <!--        <div class="addtocart-content cell auto">-->
@@ -122,15 +122,32 @@ if ( empty( $product ) || ! $product->is_visible() ) {
          
                     <?php
 
-                    //		do_action( 'woocommerce_simple_add_to_cart' );
-                    //do_action( 'woocommerce_grouped_add_to_cart');
-                    //do_action( 'woocommerce_variable_add_to_cart' );
+                    // do_action( 'woocommerce_simple_add_to_cart' );
+                    // do_action( 'woocommerce_grouped_add_to_cart');
+                    // do_action( 'woocommerce_variable_add_to_cart' );
                     //do_action( 'woocommerce_external_add_to_cart' );
-                    //do_action( 'woocommerce_single_variation' );
-                    //do_action( 'woocommerce_single_variation_add_to_cart_button' );
-
+                    // do_action( 'woocommerce_single_variation' );
+                    // do_action( 'woocommerce_single_variation_add_to_cart_button' );
+// do_action('woocommerce_composite_component_add_to_order');
                         ?>
+                    <?php $is_composite = $product->is_type('composite');
+                            if($is_composite) { 
+                              // echo 'is_composite';
+                              // do_action('woocommerce_composite_component_add_to_order');
+                              // do_action( 'woocommerce_composited_product_add_to_cart', $product, $component_id, $composite_product );
+                              // do_action( 'woocommerce_composited_product_summary' ); 
+                              // wc_get_template_part( 'add-to-cart', 'composite' ); 
+                              ?>
+                              
+                              
+                              <?php
+                            } else {
+                                
+                            }
+                            
 
+                    //  wc_get_template_part( 'single-product', 'item' ); 
+                     ?>
 
                         <?php do_action( 'woocommerce_widget_product_item_end', $args ); ?>
                         <?php
@@ -176,7 +193,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
                         remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
                         remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
                         do_action( 'woocommerce_single_product_summary' ); 
+                        
                     ?>
+                    
 <!--                    </div>-->
 <!--                </div>-->
             </div>

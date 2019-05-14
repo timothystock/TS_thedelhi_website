@@ -151,7 +151,9 @@ wc_print_notices();
 		do_action( 'woocommerce_cart_collaterals' );
 	?>
 </div>
-
+<div class="cell wc-proceed-to-checkout">
+	<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+</div>
 <?php do_action( 'woocommerce_after_cart' ); ?>
 <button class="button hide-for-medium" data-close aria-label="Close modal" type="button">
     <?php _e( 'Return to menu', 'woocommerce' ) ?>

@@ -51,7 +51,7 @@ footer.footer {
     background-repeat:repeat-x;
   }
 }
-.footer-feature-wrapper {
+.footer-feature-wrapper,.wp-facebook-list {
   align-self: center;
   width:100%;
   overflow: hidden;
@@ -114,6 +114,24 @@ footer.footer {
         }
       }
       .footer-feature-wrapper{
+        &:before {
+          background-image: url(../images/concave-30.svg);
+        }
+        &:after {
+          background-image: url(../images/concave-31.svg);
+        }
+      }
+    }
+    &.widget.fb-reviews-widget {
+      .wp-fbrev.wpac{
+        &:before {
+          background-image: url(../images/dotted-line-blue.svg)
+        }
+        &:after {
+          background-image: url(../images/dotted-line-blue.svg);
+        }
+      }
+      .wp-facebook-list{
         &:before {
           background-image: url(../images/concave-30.svg);
         }
