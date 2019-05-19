@@ -1,0 +1,437 @@
+# Translation of WooCommerce Opening Hours in French (France)
+# This file is distributed under the same license as the WooCommerce Opening Hours package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-08-14 22:41:26+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/2.3.1\n"
+"Language: fr\n"
+"Project-Id-Version: WooCommerce Opening Hours\n"
+
+#: opening-hours.php:3096
+msgid "Configure days which cannot be chosen at all."
+msgstr ""
+
+#: opening-hours.php:2310
+msgid "Rest of the World"
+msgstr ""
+
+#: opening-hours.php:2230
+msgid "All shipping methods"
+msgstr ""
+
+#: opening-hours.php:2208
+msgid "Repeat each year"
+msgstr ""
+
+#: opening-hours.php:1341
+msgid "We will close before this order can be fulfilled. You will be able to choose a time for later fulfilment."
+msgstr ""
+
+#: opening-hours.php:721
+msgid "(All instances)"
+msgstr ""
+
+#: opening-hours.php:715
+msgid "(Legacy)"
+msgstr ""
+
+#: opening-hours.php:3338
+msgid "Opening Times / Delivery Hours"
+msgstr ""
+
+#: opening-hours.php:3300
+msgid "Over-ride the default settings"
+msgstr ""
+
+#: opening-hours.php:3298
+msgid "Use the default settings with this shipping method"
+msgstr ""
+
+#: opening-hours.php:3223
+msgid "The main use of this button is for debugging purposes - it allows a third party who does not have access to your WP dashboard to easily see/analyse/reproduce your settings."
+msgstr ""
+
+#: opening-hours.php:3217 opening-hours.php:3220
+msgid "Export settings"
+msgstr ""
+
+#: opening-hours.php:2975
+msgid "Regular Opening / Delivery Hours"
+msgstr ""
+
+#: opening-hours.php:2220
+msgid "The hour \"24\" can only be chosen as part of 24:00 to indicate \"the end of the day\". If your shop is open past midnight, then finish this entry at 24:00 and then create a second entry for the following day, beginning at 00:00."
+msgstr ""
+
+#: opening-hours.php:238
+msgid "This message will disappear when you have done so."
+msgstr ""
+
+#: opening-hours.php:238
+msgid "After setting up your shipping zones (if any), please then immediately visit and save your WooCommerce opening hours settings, in order to remain compatible."
+msgstr ""
+
+#: opening-hours.php:238
+msgid "You have updated WooCommerce to a new version, which includes significant changes to shipping functionality."
+msgstr ""
+
+#: opening-hours.php:238
+msgid "Important upgrade notice"
+msgstr ""
+
+#: opening-hours.php:1662
+msgid "Enter a %s to deliver after"
+msgstr ""
+
+#: opening-hours.php:1649
+msgid "This order cannot be immediately fulfilled. Please choose an available %s."
+msgstr ""
+
+#: opening-hours.php:1649
+msgid "Choose your order fulfilment %s"
+msgstr ""
+
+#: opening-hours.php:631
+msgid "That %s is not available - please choose another"
+msgstr ""
+
+#: opening-hours.php:623
+msgid "That %s is available"
+msgstr ""
+
+#: opening-hours.php:559 opening-hours.php:1646
+msgid "time"
+msgstr ""
+
+#: opening-hours.php:559 opening-hours.php:1646
+msgid "date"
+msgstr ""
+
+#: opening-hours.php:3341
+msgid "Plugin FAQs"
+msgstr ""
+
+#: opening-hours.php:3341
+msgid "(Configure your time-zone in your general WordPress settings)"
+msgstr ""
+
+#: opening-hours.php:3287
+msgid "Enter the minimum number of minutes from ordering time that a customer is allowed to choose. Note that this only applies if the customer is indeed being asked to make a choice (otherwise, \"as soon as possible\" is implied)."
+msgstr ""
+
+#: opening-hours.php:3127
+msgid "The time when the shop first opens/opened today (for any shipping method). When the shop is closed all day, or has already closed, the minimum time will be added to the time now instead."
+msgstr ""
+
+#: opening-hours.php:3126
+msgid "The time that the customer is ordering (default)"
+msgstr ""
+
+#: opening-hours.php:3125
+msgid "Count the minimum fulfilment time beginning from:"
+msgstr ""
+
+#: opening-hours.php:3309
+msgid "If the time today has gone past %s, then add another %s minutes."
+msgstr ""
+
+#: opening-hours.php:3185
+msgid "This means that if a category has no restrictions at all, then any products in it will always be allowed, whatever other categories they are in. If you instead wish empty categories to be ignored when handling products in multiple categories, then activate this option."
+msgstr "Cela signifie que si une catégorie n'a aucune restriction, alors tous les produits seront  toujours autorisés, ainsi que toute autre catégorie dans ce cas. Si vous le souhaitez, au lieu de laisser les catégories vides pour être ignorées lors que vous gérés de multiples catégories,vous pouvez activer l'option à cet effet."
+
+#: opening-hours.php:3185
+msgid "By default, per-category restrictions (if you have any) are applied such that a product in the cart only needs to be in one category that has currently allowed times."
+msgstr "Par défaut, les restrictions par catégorie (si vous en avez) sont appliquées, tel que le produit dans le panier ne doit être dans une catégorie qui a actuellement autorisés dans certains chenaux horaires."
+
+#: opening-hours.php:3181
+msgid "Ignore Unrestricted Categories"
+msgstr "Ignorer  Catégories Libres"
+
+#: opening-hours.php:3175
+msgid "If this option is not selected and the customer's cart only contains goods which do not require shipping (i.e. virtual goods), then your chosen times will be ignored - checkout will always be allowed."
+msgstr "Si cette option est sélectionnée et que le panier du client ne contient que des produits qui ne nécessitent pas d'expédition (par exemple les biens virtuels), alors vos moments choisis seront ignorés - le passage en caisse sera toujours autorisé."
+
+#: opening-hours.php:403
+msgid "If anything is entered here, then it is displayed when the customer visits the product page, out of hours (with any minimum order time disregarded, as otherwise it would always display)."
+msgstr "Si quelque chose est inscrit ici, alors il sera affiché lorsque le client visite la page du produit, en dehors des heures de vente autorisées (les délais  de commande minimum seront ignorées, car autrement cela serait toujours affiché)."
+
+#: opening-hours.php:401
+msgid "(product page)"
+msgstr "(page du produit)"
+
+#: opening-hours.php:394
+msgid "(cart / check-out)"
+msgstr "(panier / caisse)"
+
+#: opening-hours.php:3341
+msgid "Enter the times when your %s is open / can deliver."
+msgstr "Entrez les horaires  où votre %s est ouvert / peut livrer."
+
+#: opening-hours.php:2951
+msgid "These hours will be used unless alternative hours for a particular shipping method over-ride them."
+msgstr "Ces heures seront utilisées à moins que vous ayez introduit des heures alternatives pour une méthode particulière d'expédition en remplacement."
+
+#: opening-hours.php:2205
+msgid "From:"
+msgstr "De :"
+
+#: opening-hours.php:1433
+msgid "Date chosen"
+msgstr "Date choisie "
+
+#: opening-hours.php:1398
+msgid "The time you have chosen is not available for the chosen delivery method (%s); please choose again."
+msgstr "Le créneau horaire que vous avez choisi n'est pas disponible par rapport à la méthode (%s) choisie; Veuillez choisir un autre créneau horaire."
+
+#: opening-hours.php:1329
+msgid "This order cannot be fulfilled immediately; but you will be able to choose a time for later fulfilment."
+msgstr "Cette commande ne peux pas être exécute immédiatement; Cependant vous pouvez choisir un créneau horaire disponible pour une livraison ultérieure."
+
+#: opening-hours.php:1141
+msgid "Please choose an available time."
+msgstr "S'il vous plaît, veuillez choisir un créneau horaire disponible. "
+
+#: opening-hours.php:1139
+msgid "You will need to choose an available time at the checkout."
+msgstr "Vous devez choisir un créneau horaire disponible pour le passage en caisse."
+
+#: opening-hours.php:1134
+msgid "This item is not immediately available."
+msgstr ""
+
+#: opening-hours.php:1132
+msgid "This item is not available at the time you have chosen."
+msgstr "Cet article n'est disponible dans le créneau horaire  que vous avez choisi."
+
+#: opening-hours.php:415
+msgid "You can enter restricted times for the availability of products in this category by editing the category, after you have created it. i.e. Add the product category, and then choose the \"edit\" option for it."
+msgstr "Vous pouvez saisir les périodes limitées pour la disponibilité des produits dans cette catégorie en éditant la catégorie, après que vous l'avez créé. Ajouter  la catégorie  produit, puis choisissez l'option \"modifier\" pour la catégorie concerné."
+
+#: opening-hours.php:396
+msgid "If anything is entered here, then it is displayed instead of the default text, when the customer has the item in his cart at the cart or checkout page, out of hours."
+msgstr "Si quelque chose est entré ici, alors il sera affiché à la place du texte par défaut, lorsque le client aura des  l’article dans son panier ainsi que à la page de la caisse,et ce  en dehors des heures de vente autorisé."
+
+#: opening-hours.php:394 opening-hours.php:401
+msgid "Out-of-hours message"
+msgstr "Message pendant les heures de fermeture de la boutique"
+
+#: opening-hours.php:372 opening-hours.php:2960
+msgid "Add a new time..."
+msgstr "Ajouter de nouvelles heures d’ouverture"
+
+#: opening-hours.php:363 opening-hours.php:2982
+msgid "Operating in date-only mode; the assumed time for every order (for the purposes of calculating shop status) will be:"
+msgstr "Opérant uniquement en mode date; le délais pris en compte pour chaque commande (pour les fins du calcul de la situation de la boutique) sera:"
+
+#: opening-hours.php:356
+msgid "N.B. All of your shop-wide settings will still apply - this setting is for setting an additional restriction to any shop-wide settings."
+msgstr "N.B. Tous vos réglages concernant le  magasin  resteront  tel quel - ce paramètre permet seulement de régler une restriction supplémentaire à tous les paramètres déjà existant du magasin."
+
+#: opening-hours.php:356
+msgid "If there are no times at all, then by default any time is allowed."
+msgstr "S'il n'existe aucun choix de date ou d’heure, alors toute les dates et heures seront disponible."
+
+#: opening-hours.php:356
+msgid "Enter the times allowed for orders containing products in this category."
+msgstr "Entrez les temps autorises  pour les commandes contenant des produits dans cette catégorie."
+
+#: opening-hours.php:353
+msgid "Allowed times"
+msgstr "Horaires autorises"
+
+#: opening-hours.php:3341
+msgid "If there are no times at all, then by default the %s is assumed to be open / able to deliver at all hours."
+msgstr "S'il n'existe aucun choix de date ou d’heure, le %s sera toujours ouvert par défaut."
+
+#: opening-hours.php:3164
+msgid "Enter the maximum number of days ahead that it is possible to choose a time from. Leave blank for no maximum (0 means \"today only\")."
+msgstr "Entrez le nombre maximal de jours qu'il est possible de commander en avance. Laissez vide s’il n’est pas possible de commander en avance ou 0 pour aujourd'hui seulement."
+
+#: opening-hours.php:3161
+msgid "days"
+msgstr "jours"
+
+#: opening-hours.php:3158
+msgid "Maximum Number of Days Ahead"
+msgstr "Nombre maximal de jours que l’on peut commander en avance"
+
+#: opening-hours.php:3050 opening-hours.php:3069
+msgid "If any hours are given here, then the default hours will not be used when this shipping method (%s) is selected - the hours here will be used instead."
+msgstr "Si des heures sont indiquées ici, alors les heures par défaut ne seront pas utilisés lorsque que la méthode (%s) de transport  sera sélectionné - les heures indiquées  seront  utilisées à la place."
+
+#: opening-hours.php:2990
+msgid "Default"
+msgstr "Par défaut"
+
+#: opening-hours.php:1396
+msgid "The time you have chosen is not available; please choose again."
+msgstr "L'heure que vous avez choisi n'est pas disponible; Veuillez en choisir à nouveau."
+
+#: opening-hours.php:1375 opening-hours.php:1383
+msgid "Please choose a time."
+msgstr "S'il vous plaît, veuillez choisir un horaire. "
+
+#: opening-hours.php:1361
+msgid "The next possible time is:"
+msgstr "Le prochaine créneaux horaire disponible est:"
+
+#: opening-hours.php:1360
+msgid "The %s cannot immediately fulfil this order; you will need to choose an available fulfilment time."
+msgstr "La %s ne peut pas exécute immédiatement cette commande; Vous devez choisir un créneau horaire disponible."
+
+#: opening-hours.php:1280 opening-hours.php:1306
+msgid "We are next open at:"
+msgstr "Nous serons ouvert à :"
+
+#: opening-hours.php:1278
+msgid "This delivery method (%s) is next available at: %s"
+msgstr ""
+
+#: opening-hours.php:1274
+msgid "The %s is not currently able to fulfil this order."
+msgstr "Le %s n'est pas actuellement en mesure de préparer cette commande."
+
+#: opening-hours.php:3341
+msgid "The current time when this page loaded: %s"
+msgstr "L’heure exacte pendant le chargement de cette page : %s"
+
+#: opening-hours.php:3210
+msgid "If you select any shipping classes here then your chosen times will only be consulted if there are products in the shopping cart from those classes."
+msgstr "Si vous sélectionner une catégorie de livraison ici, l'heures et la date choisie s'appliqueront uniquement s'il y a des produits associés à ces catégorie dans le panier d'achat."
+
+#: opening-hours.php:3200
+msgid "There are no shipping classes; so there is nothing to set here."
+msgstr "Il n'existe aucune catégorie de livraison, donc rien à configurer."
+
+#: opening-hours.php:3191
+msgid "Relevant Shipping Classes"
+msgstr "Catégories de livraison pertinente"
+
+#: opening-hours.php:3175
+msgid "If you wish your chosen times to apply even when there are no shippable goods, then choose this option."
+msgstr "Si vous désirez que la date et l’heure soient prises en compte même si le panier ne contient que des produits qui ne nécessitent pas de livraison, choisissez cette option."
+
+#: opening-hours.php:3171
+msgid "Apply To Virtual Goods"
+msgstr "S'applique aux biens virtuels"
+
+#: opening-hours.php:3143
+msgid "Outside of opening hours, advise the customer that their order will not be fulfilled until opening times (but neither prevent check-out nor ask the customer to choose a time)"
+msgstr "En dehors des heures d'ouvertures, aviser le client que sa commande ne sera pas traitée avant la prochaine ouverture (mais n'empêchera pas de confirmer la commande ou de choisir une date et une heure)"
+
+#: opening-hours.php:1305
+msgid "The %s is not currently open; your order will be fulfilled once we open."
+msgstr "Le %1$s est présentement fermé, votre commande sera traitée aussitôt que le %1$s ouvrira."
+
+#: opening-hours.php:3565
+msgid "Settings"
+msgstr "Paramètres"
+
+#: opening-hours.php:209 opening-hours.php:210
+msgid "Opening Times"
+msgstr "Heures d'ouverture"
+
+#: opening-hours.php:3151
+msgid "Always force the customer to choose a time when checking-out"
+msgstr "Toujours obliger le client à choisir une heure et une date au moment de confirmer la commande"
+
+#: opening-hours.php:3147
+msgid "Outside of opening hours, forbid any customers to check-out"
+msgstr "En dehors des heures d'ouvertures, interdire à tous les clients de passer une commande"
+
+#: opening-hours.php:3139
+msgid "Outside of opening hours, force the customer to choose a fulfilment time when checking-out"
+msgstr "En dehors des heures d'ouvertures, obliger le client à choisir un temps valide pour confirmer la commande."
+
+#: opening-hours.php:3134
+msgid "Customer Check-out Choices"
+msgstr "Choix du processus d’achat"
+
+#: opening-hours.php:388
+msgid "Enter the minimum number of minutes from ordering time that a customer can select. Note that this only applies if the customer is being asked to make a choice (otherwise, \"as soon as possible\" is implied)."
+msgstr "Entrez le nombre de minutes minimal du placement d'une commande qu'un client peu choisir. Notez que ceci s'applique seulement si le client doit faire un choix (sinon \"le plus rapidement possible\" s'applique)."
+
+#: opening-hours.php:385 opening-hours.php:3309
+msgid "minutes"
+msgstr "minutes"
+
+#: opening-hours.php:382 opening-hours.php:3121 opening-hours.php:3284
+msgid "Minimum Order Fulfilment Time"
+msgstr "Temps minimal pour compléter la commande"
+
+#: opening-hours.php:3100
+msgid "Add a new holiday..."
+msgstr "Ajouter un férié..."
+
+#: opening-hours.php:3092
+msgid "Holidays"
+msgstr "Fériés"
+
+#: opening-hours.php:371 opening-hours.php:2959
+msgid "Add a set of default rules (Monday - Saturday, 9 a.m. - 5 p.m.)..."
+msgstr "Ajouter les règles d'ouverture par défaut (Lundi - Samedi, 9h00 - 17h00)..."
+
+#: opening-hours.php:2219
+msgid "You must choose a closing time that is later than the opening time"
+msgstr "Vous devez choisir une heure de fermeture qui est plus tard que celle d'ouverture"
+
+#: opening-hours.php:2218
+msgid "We do not open on this day of the week."
+msgstr "Nous sommes fermés cette journée de la semaine."
+
+#: opening-hours.php:2210
+msgid "We are closed on this day."
+msgstr "Nous somme fermés à cette date."
+
+#: opening-hours.php:2209
+msgid "Choose a date"
+msgstr "Sélectionnez une date"
+
+#: opening-hours.php:2207
+msgid "Delete"
+msgstr "Supprimer"
+
+#: opening-hours.php:2206
+msgid "until"
+msgstr "jusqu'à"
+
+#: opening-hours.php:2204
+msgid "Saturday"
+msgstr "Samedi"
+
+#: opening-hours.php:2203
+msgid "Friday"
+msgstr "Vendredi"
+
+#: opening-hours.php:2202
+msgid "Thursday"
+msgstr "Jeudi"
+
+#: opening-hours.php:2201
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#: opening-hours.php:2200
+msgid "Tuesday"
+msgstr "Mardi"
+
+#: opening-hours.php:2199
+msgid "Monday"
+msgstr "Lundi"
+
+#: opening-hours.php:2198
+msgid "Sunday"
+msgstr "Dimanche"
+
+#: opening-hours.php:494 opening-hours.php:1435
+msgid "Time chosen"
+msgstr "Date et heure choisies"
+
+#: opening-hours.php:1274 opening-hours.php:1305 opening-hours.php:1360
+#: opening-hours.php:3341
+msgid "shop"
+msgstr "magasin"

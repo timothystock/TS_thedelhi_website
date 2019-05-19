@@ -1,0 +1,94 @@
+[
+    {
+        "name": "davidanderson684/simba-plugin-manager-updater",
+        "version": "v1.5.10",
+        "version_normalized": "1.5.10.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/DavidAnderson684/simba-plugin-manager-updater.git",
+            "reference": "a7337295203d9ab8d9db4a29758097b22c713dd3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/DavidAnderson684/simba-plugin-manager-updater/zipball/a7337295203d9ab8d9db4a29758097b22c713dd3",
+            "reference": "a7337295203d9ab8d9db4a29758097b22c713dd3",
+            "shasum": ""
+        },
+        "require": {
+            "yahnis-elsts/plugin-update-checker": "4.4.*"
+        },
+        "time": "2018-12-06T10:53:03+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "description": "This class is an updates checker and UI for WordPress plugins that are hosted using the Simba Plugin Manager plugin"
+    },
+    {
+        "name": "davidanderson684/woocommerce-compat",
+        "version": "v0.3.1",
+        "version_normalized": "0.3.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/DavidAnderson684/woocommerce-compat.git",
+            "reference": "8c9c4e3aa29179dc0ae81a4f900fadcaa98e8a56"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/DavidAnderson684/woocommerce-compat/zipball/8c9c4e3aa29179dc0ae81a4f900fadcaa98e8a56",
+            "reference": "8c9c4e3aa29179dc0ae81a4f900fadcaa98e8a56",
+            "shasum": ""
+        },
+        "time": "2018-12-11T14:25:32+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "description": "A library for abstracting away differences between WooCommerce versions"
+    },
+    {
+        "name": "yahnis-elsts/plugin-update-checker",
+        "version": "v4.4",
+        "version_normalized": "4.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/YahnisElsts/plugin-update-checker.git",
+            "reference": "da4286343601e1f5c01836e1d51e1c57cedb0f6d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/YahnisElsts/plugin-update-checker/zipball/da4286343601e1f5c01836e1d51e1c57cedb0f6d",
+            "reference": "da4286343601e1f5c01836e1d51e1c57cedb0f6d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.0"
+        },
+        "time": "2017-12-22T10:39:11+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "plugin-update-checker.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Yahnis Elsts",
+                "email": "whiteshadow@w-shadow.com",
+                "homepage": "http://w-shadow.com/",
+                "role": "Developer"
+            }
+        ],
+        "description": "A custom update checker for WordPress plugins and themes. Useful if you can't host your plugin in the official WP repository but still want it to support automatic updates.",
+        "homepage": "https://github.com/YahnisElsts/plugin-update-checker/",
+        "keywords": [
+            "automatic updates",
+            "plugin updates",
+            "theme updates",
+            "wordpress"
+        ]
+    }
+]

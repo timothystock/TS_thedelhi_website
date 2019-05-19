@@ -1,0 +1,1 @@
+xgettext --force-po -o o.pot -L PHP --from-code=utf-8 -k__ -k_e -k_x ./opening-hours.php

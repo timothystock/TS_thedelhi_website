@@ -1,0 +1,6 @@
+{
+    "require": {
+        "davidanderson684/simba-plugin-manager-updater": "1.5.*",
+        "davidanderson684/woocommerce-compat": "^0.3"
+    }
+}
