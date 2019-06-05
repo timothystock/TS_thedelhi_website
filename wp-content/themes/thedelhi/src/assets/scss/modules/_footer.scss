@@ -51,7 +51,9 @@ footer.footer {
     background-repeat:repeat-x;
   }
 }
-.footer-feature-wrapper,.wp-facebook-list {
+.footer-feature-wrapper
+//, .wp-facebook-list 
+{
   align-self: center;
   width:100%;
   overflow: hidden;
@@ -84,6 +86,7 @@ footer.footer {
   }
 }
 .footer-grid {
+  margin-bottom:50px;
   section{
     &:first-child {
       // background: blue;
@@ -125,18 +128,52 @@ footer.footer {
     &.widget.fb-reviews-widget {
       .wp-fbrev.wpac{
         &:before {
-          background-image: url(../images/dotted-line-blue.svg)
+          content:'';
+          height:2px;
+          position:absolute;
+          left:22px;
+          right:22px;
+          top:0;
+          background-size:auto;
+          background-repeat:repeat-x;
+          background-image: url(../images/dotted-line-blue.svg);
+          
         }
         &:after {
+          content:'';
+          height:2px;
+          position:absolute;
+          left:22px;
+          right:22px;
+          bottom:0;
+          background-size:auto;
+          background-repeat:repeat-x;
           background-image: url(../images/dotted-line-blue.svg);
+          
         }
       }
       .wp-facebook-list{
         &:before {
+          content:'';
+          position:absolute;
+          top:0;
+          left:-1px;
+          bottom:0;
+          width:24px;
           background-image: url(../images/concave-30.svg);
+          background-size: auto 100%;
+          background-repeat: no-repeat;
         }
         &:after {
+          content:'';
+          position:absolute;
+          top:0;
+          right:-2px;
+          bottom:0;
+          width:24px;
           background-image: url(../images/concave-31.svg);
+          background-size: auto 100%;
+          background-repeat: no-repeat;
         }
       }
     }
@@ -183,5 +220,68 @@ footer.footer {
     list-style-type: none;
     margin: 0;
     padding: 0;
+  }
+}
+
+#fbrev_widget-2.widget.fb-reviews-widget {
+  .wp-fbrev.wpac {
+    font-size:11px !important;
+    position: relative!important;
+    padding:1rem !important;
+    // &:before {
+    //   cont
+    //   background-image: url(../images/dotted-line-blue.svg)
+    // }
+    // &:after {
+    //   background-image: url(../images/dotted-line-blue.svg);
+    // }
+    .wp-facebook-content-inner {
+      min-height: unset;
+      @include breakpoint(medium down) {
+        display: none;
+      }
+    }
+    .wp-facebook-list {
+      height: 100%;
+      overflow-y: auto;
+    }
+    @include breakpoint(medium down) {
+      .wp-facebook-left img {
+        height: 30px!important;
+        width: 30px!important;
+        margin-right: 0px!important;
+      }
+    }
+    
+    .wp-facebook-place .wp-facebook-name {
+      font-size:14px !important;
+      &+ div:not(.wp-facebook-powered) {
+        float:left !important;
+      }
+    }
+    .wp-facebook-powered {
+      float:left !important;
+      span{
+        font-size: 12px !important;
+      }
+    }
+    .wp-facebook-review {
+        margin-top: 10px!important;
+        .wp-facebook-name,.wp-facebook-time,.wp-facebook-feedback {
+          float:left!important;
+        }
+        .wp-facebook-feedback {
+          width:100%;
+        }
+        .wp-facebook-time, span.wp-facebook-text {
+          font-size:12px !important;
+        }
+        .wp-facebook-stars .wp-star svg {
+          width: 12px !important;
+          height: 12px !important;
+          line-height:14px !important;
+        }
+    }
+    
   }
 }

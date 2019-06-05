@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				), '', WC_CP()->plugin_path() . '/templates/' );
 			}
 
-		?></div>test
+		?></div>
 		<div class="component_selections"><?php
 
 			/**

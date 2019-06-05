@@ -3,7 +3,21 @@
 Template Name: Menu page v2
 */
 get_header(); ?>
+<script type="text/javascript">
+(function($) {
+    $('#call-us-now-button').hide();
 
+    // $('.figure .woocommerce').hide();
+    // $('.figure > h3').on('click', function() {
+    //     $(this).toggleClass('expanded');
+    //     $(this).parent('.figure').find('.woocommerce').slideToggle();
+    //     var figures = $(this).parent('.figure').siblings('.figure');
+    //     $(figures).find('h3.expanded').removeClass('expanded').siblings('.woocommerce').slideToggle();
+    //    $(figures).find('h3').removeClass('expanded');
+    //    $(figures).find('.woocommerce').hide();
+    // });
+})(jQuery);
+</script>
 <div class="main-container">
 	<div class="main-grid grid-container">
       
@@ -111,6 +125,7 @@ get_header(); ?>
                 </div>
             </div>
             <div class="cell medium-5"  data-sticky-container>
+            <a href="#" id="basket-reveal-button" data-open="basket-reveal-wrapper" class="button hide-for-medium mobile-footer-button">View Basket</a>
                 <div id="basket-sticky-wrapper" class="sticky" data-sticky data-options="marginTop:4rem;marginBtm:11rem;" data-sticky-on="medium" data-top-anchor="menu-page:top" data-update-history="true">
                     <div id="Basket" ><?php echo do_shortcode( '[woocommerce_cart]' ); ?></div>
                 </div>
@@ -119,20 +134,8 @@ get_header(); ?>
         
     </div>
 </div>
-<div id="basket-reveal-wrapper" class="reveal" data-reveal>
+<div id="basket-reveal-wrapper" class="reveal" data-reveal aria-labelledby="basket-reveal-wrapper" aria-hidden="true" role="dialog">
     
 </div>
-<!-- <script type="text/javascript">
-(function($) {
-    $('.figure .woocommerce').hide();
-    $('.figure > h3').on('click', function() {
-        $(this).toggleClass('expanded');
-        $(this).parent('.figure').find('.woocommerce').slideToggle();
-        var figures = $(this).parent('.figure').siblings('.figure');
-        $(figures).find('h3.expanded').removeClass('expanded').siblings('.woocommerce').slideToggle();
-    //    $(figures).find('h3').removeClass('expanded');
-    //    $(figures).find('.woocommerce').hide();
-    });
-})(jQuery);
-</script> -->
+
 <?php get_footer();

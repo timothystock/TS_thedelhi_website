@@ -62,8 +62,8 @@
                         <!-- </span> -->
                     </button> 
                     <?php } ?>
-                    <a href="tel:+441217051020" class="text-center button hide-for-medium" id="call-us-now-button">
-                        Call us now
+                    <a href="tel:+441217051020" class="text-center button hide-for-medium mobile-footer-button" id="call-us-now-button">
+                        <i class="fa fa-phone"></i>Call us now
                     </a>
                 </div>
             </div>

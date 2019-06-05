@@ -21,8 +21,8 @@ defined( 'ABSPATH' ) || exit;
 wc_print_notices();
 
  ?>
- 
-<div class="cell wc-proceed-to-checkout">
+
+<div class="cell wc-proceed-to-checkout hide-for-medium">
 	<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
 </div>
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
@@ -151,8 +151,9 @@ wc_print_notices();
 		do_action( 'woocommerce_cart_collaterals' );
 	?>
 </div>
-<div class="cell wc-proceed-to-checkout">
-	<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+<div class="cell wc-proceed-to-checkouts">
+	
+	<?php //do_action( 'woocommerce_proceed_to_checkout' ); ?>
 </div>
 <?php do_action( 'woocommerce_after_cart' ); ?>
 <button class="button hide-for-medium" data-close aria-label="Close modal" type="button">

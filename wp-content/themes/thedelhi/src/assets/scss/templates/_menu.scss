@@ -394,6 +394,33 @@ i.tags {
     background-color: $white;
     padding:1.25em;
     text-align: center;
+    overflow-y:auto;
+    .composite_form:not(.paged) .component {
+        .step_title_wrapper.component_title {
+            font-family: 'oswald', 'ostrich', 'DIN Condensed', serif;
+            font-size: 1rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            padding-right:0;
+        }
+        &.static .composited_product_title_wrapper {
+            padding-top:0;
+        }
+        .component_inner {
+            padding-bottom: 1rem;
+            border-bottom: 2px dotted $pink;
+            margin-bottom:1rem;
+        }
+        table.variations tbody {border:0px;}
+        select {
+            box-shadow: none;
+            border: 3px double #81c771;
+            height: auto;
+            min-height: 44px;
+            border-radius: 26px;
+        }
+    }
 }
 
 form.cart,form.woocommerce-cart-form {
@@ -588,7 +615,39 @@ form.cart.composite_form {
         padding-right: 0.425rem;
         padding-left: 0.425rem;
     }
+    @include breakpoint(small only){
+        height:96vh;
+        overflow-y: auto;
+        & > .woocommerce {
+            height: 100%;
+            // flex:1 1 auto;
+            // align-content: center
+            .cart-empty {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                text-align: center;
+                & + p.return-to-shop {
+                    position: absolute;
+                    bottom: 0;
+                    margin: 0 auto;
+                    left: 0;
+                    right: 0;
+                    text-align: center;
+                }
+            }
+
+        }
+    }
 }
+.cart {
+    width:100%;
+    // .composite_wrap {
+    //     width:100%;
+    // }
+}
+
 ul.products li.product_cat-mains-traditional,ul.products li.product_cat-british-indian-kitchen{
     a h3.product-title {
         padding: 0.125rem 0;

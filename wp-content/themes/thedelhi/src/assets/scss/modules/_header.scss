@@ -72,7 +72,7 @@
 #mobile-basket-toggle {
     display: none;
 }
-#call-us-now-button {
+.mobile-footer-button {
     position: fixed;
     bottom: 0;
     left: 2%;
@@ -122,5 +122,17 @@ body.home {
     mask-position: center bottom;
     @include breakpoint(large) {
         display: none;
+    }
+}
+
+body.page-template-blank {
+    header.site-header,footer.footer,nav.off-canvas,nav.navigation.post-navigation,#cookie-law-info-bar,#cookie-law-info-again {
+        display: none;
+    }
+    .main-content {
+        padding:15px;
+    }
+    .position-left.reveal-for-large ~ .off-canvas-content {
+        margin-left:0;
     }
 }

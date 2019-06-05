@@ -130,25 +130,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
                     // do_action( 'woocommerce_single_variation_add_to_cart_button' );
 // do_action('woocommerce_composite_component_add_to_order');
                         ?>
-                    <?php $is_composite = $product->is_type('composite');
-                            if($is_composite) { 
-                              // echo 'is_composite';
-                              // do_action('woocommerce_composite_component_add_to_order');
-                              // do_action( 'woocommerce_composited_product_add_to_cart', $product, $component_id, $composite_product );
-                              // do_action( 'woocommerce_composited_product_summary' ); 
-                              // wc_get_template_part( 'add-to-cart', 'composite' ); 
-                              ?>
-                              
-                              
-                              <?php
-                            } else {
-                                
-                            }
-                            
-
-                    //  wc_get_template_part( 'single-product', 'item' ); 
-                     ?>
-
+                   
                         <?php do_action( 'woocommerce_widget_product_item_end', $args ); ?>
                         <?php
                         /**
@@ -188,14 +170,33 @@ if ( empty( $product ) || ! $product->is_visible() ) {
                          * @hooked woocommerce_template_loop_add_to_cart - 10
                          */
                     //	do_action( 'woocommerce_after_shop_loop_item' );
-                        remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
-                        remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-                        remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-                        remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-                        do_action( 'woocommerce_single_product_summary' ); 
-                        
-                    ?>
-                    
+                       
+                     $is_composite = $product->is_type('composite');
+                            if($is_composite) { 
+                              // echo 'is_composite';
+                              //var_dump($product);
+                              // do_action('woocommerce_composite_before_components');
+                              // do_action( 'woocommerce_composited_product_add_to_cart', $product, $component_id, $composite_product );
+                      
+                              // wc_get_template_part( 'add-to-cart', 'composite' ); \
+                              remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+                              remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+                              remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+                              remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+                              do_action( 'woocommerce_single_product_summary' ); 
+                              
+                            } else {
+                              remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+                              remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+                              remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+                              remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+                              do_action( 'woocommerce_single_product_summary' ); 
+                            }
+                            
+
+                    //  wc_get_template_part( 'single-product', 'item' ); 
+                     ?>
+
 <!--                    </div>-->
 <!--                </div>-->
             </div>

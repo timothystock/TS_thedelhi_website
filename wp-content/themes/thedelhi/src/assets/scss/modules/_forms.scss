@@ -4,6 +4,7 @@ form.wpcf7-form {
         box-shadow: none;
         border: 3px double $green;
         height: auto;
+        min-height: 44px;
         border-radius: 26px;
         &:focus {
             outline: 4px solid $yellow;
